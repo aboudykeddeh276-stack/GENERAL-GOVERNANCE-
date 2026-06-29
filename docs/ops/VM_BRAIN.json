@@ -1,6 +1,6 @@
 {
   "process_id": "VM_BRAIN",
-  "tick_id": 1,
+  "tick_id": 2,
   "cycles": 4,
   "halted": true,
   "register_A": 1,
@@ -13,7 +13,7 @@
     "PC=3 OP=255"
   ],
   "ok": true,
-  "process_hash": "5e071c19a63cc501d8450a02ae4f9c4f2d34a9777c1b6b5af158dd0b372377f4",
+  "process_hash": "bf3eb9c004b96f99caa41f9b41b289a3865e92658b0a2501d708ab7bdea7db06",
   "process_title": "Virtual Machine + Brain Controller",
   "lane": "CORE_VM",
   "version": "v1.0"
