@@ -7,6 +7,7 @@ from typing import List
 from .cognition import BrainInspiredController
 from .core import VirtualComputer
 from .material_calibration import run_material_failure_calibration
+from .ops import run_internal_ops
 from .orchestrator import SUPPORTED_TARGETS, UniformBuildOrchestrator
 from .registry import REGISTRY_BLOCKS
 from .braink_runtime import run_full_braink_lane
@@ -89,6 +90,10 @@ def _organism_run(tick_id: int, payload: dict) -> dict:
     return run_organism_process(input_signal=payload, tick_id=tick_id)
 
 
+def _ops_run(tick_id: int) -> dict:
+    return run_internal_ops(tick_id=tick_id)
+
+
 def _spike_calibrate(
     spike_kind: str,
     observed_value: float,
@@ -150,6 +155,12 @@ def parse_args(argv: List[str] | None = None) -> argparse.Namespace:
     spike_cmd.add_argument("--failure-boundary", type=float, default=100.0)
     spike_cmd.add_argument("--environment", default="ambient_lab")
     spike_cmd.add_argument("--target-system", default="cpu_runtime")
+
+    ops_cmd = sub.add_parser(
+        "ops-run",
+        help="Run all internal operational lanes and report status",
+    )
+    ops_cmd.add_argument("--tick-id", type=int, default=0)
 
     sub.add_parser("registry", help="Print BRAINK registry blocks")
 
@@ -223,6 +234,8 @@ def main(argv: List[str] | None = None) -> int:
             safe_boundary=args.safe_boundary,
             failure_boundary=args.failure_boundary,
         )
+    elif args.command == "ops-run":
+        result = _ops_run(tick_id=args.tick_id)
     elif args.command == "organism-run":
         import json as _json
         result = _organism_run(
