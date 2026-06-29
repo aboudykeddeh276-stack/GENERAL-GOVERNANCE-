@@ -1,2 +1,3 @@
-# GENERAL-GOVERNANCE-
-GOVERNANCE AND CONVENTIONS 
+# General Governance
+
+Governance and conventions for this repository.
