@@ -9,6 +9,8 @@ from .core import VirtualComputer
 from .material_calibration import run_material_failure_calibration
 from .orchestrator import SUPPORTED_TARGETS, UniformBuildOrchestrator
 from .registry import REGISTRY_BLOCKS
+from .braink_runtime import run_full_braink_lane
+from .organism import run_organism_process
 from .spike_calibration import run_spike_boundary_calibration
 
 
@@ -63,6 +65,30 @@ def _registry() -> dict:
     return {"registry": REGISTRY_BLOCKS}
 
 
+def _braink_run(
+    tick_id: int,
+    system: str,
+    environment: str,
+    spike_kind: str,
+    observed_value: float,
+    safe_boundary: float,
+    failure_boundary: float,
+) -> dict:
+    return run_full_braink_lane(
+        tick_id=tick_id,
+        system=system,
+        environment=environment,
+        spike_kind=spike_kind,
+        observed_value=observed_value,
+        safe_boundary=safe_boundary,
+        failure_boundary=failure_boundary,
+    )
+
+
+def _organism_run(tick_id: int, payload: dict) -> dict:
+    return run_organism_process(input_signal=payload, tick_id=tick_id)
+
+
 def _spike_calibrate(
     spike_kind: str,
     observed_value: float,
@@ -109,9 +135,14 @@ def parse_args(argv: List[str] | None = None) -> argparse.Namespace:
         "spike-calibrate",
         help="Run BRAINK spike boundary calibration lane",
     )
+    _SPIKE_KINDS = [
+        "temperature", "voltage", "current", "pressure",
+        "stress", "strain", "memory_load", "cpu_load",
+        "network_traffic", "runtime", "signal", "learning_drift",
+    ]
     spike_cmd.add_argument(
         "--spike-kind",
-        choices=["temperature", "voltage", "stress", "runtime", "signal"],
+        choices=_SPIKE_KINDS,
         default="temperature",
     )
     spike_cmd.add_argument("--observed-value", type=float, default=97.0)
@@ -121,6 +152,34 @@ def parse_args(argv: List[str] | None = None) -> argparse.Namespace:
     spike_cmd.add_argument("--target-system", default="cpu_runtime")
 
     sub.add_parser("registry", help="Print BRAINK registry blocks")
+
+    _BRAINK_KINDS = [
+        "temperature", "voltage", "current", "pressure",
+        "stress", "strain", "memory_load", "cpu_load",
+        "network_traffic", "runtime", "signal", "learning_drift",
+    ]
+    braink_cmd = sub.add_parser(
+        "braink-run",
+        help="Run the full 14-step BRAINK runtime lane (§69)",
+    )
+    braink_cmd.add_argument("--tick-id", type=int, default=0)
+    braink_cmd.add_argument("--system", default="cpu_runtime")
+    braink_cmd.add_argument("--environment", default="ambient_lab")
+    braink_cmd.add_argument("--spike-kind", choices=_BRAINK_KINDS, default="temperature")
+    braink_cmd.add_argument("--observed-value", type=float, default=97.0)
+    braink_cmd.add_argument("--safe-boundary", type=float, default=90.0)
+    braink_cmd.add_argument("--failure-boundary", type=float, default=100.0)
+
+    organism_cmd = sub.add_parser(
+        "organism-run",
+        help="Run the BRAINK organism core process loop (§34)",
+    )
+    organism_cmd.add_argument("--tick-id", type=int, default=0)
+    organism_cmd.add_argument(
+        "--payload",
+        default="{}",
+        help="JSON string of input signal key-value pairs",
+    )
 
     return parser.parse_args(argv)
 
@@ -153,6 +212,22 @@ def main(argv: List[str] | None = None) -> int:
             failure_boundary=args.failure_boundary,
             environment=args.environment,
             target_system=args.target_system,
+        )
+    elif args.command == "braink-run":
+        result = _braink_run(
+            tick_id=args.tick_id,
+            system=args.system,
+            environment=args.environment,
+            spike_kind=args.spike_kind,
+            observed_value=args.observed_value,
+            safe_boundary=args.safe_boundary,
+            failure_boundary=args.failure_boundary,
+        )
+    elif args.command == "organism-run":
+        import json as _json
+        result = _organism_run(
+            tick_id=args.tick_id,
+            payload=_json.loads(args.payload),
         )
     else:
         raise ValueError(f"Unknown command: {args.command}")

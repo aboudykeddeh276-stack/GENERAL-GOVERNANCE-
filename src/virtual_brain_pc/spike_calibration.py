@@ -5,7 +5,11 @@ import json
 from typing import Dict, Literal
 
 
-SpikeKind = Literal["temperature", "voltage", "stress", "runtime", "signal"]
+SpikeKind = Literal[
+    "temperature", "voltage", "current", "pressure",
+    "stress", "strain", "memory_load", "cpu_load",
+    "network_traffic", "runtime", "signal", "learning_drift",
+]
 
 
 def CALL_SPIKE_EVENT_CLASSIFY(spike_kind: SpikeKind, observed_value: float) -> Dict[str, object]:
@@ -163,7 +167,11 @@ def run_spike_boundary_calibration(
     boundary_ratio = observed_value / failure_boundary
     near_297 = 0.97 <= boundary_ratio < 1.0
     achieved_3 = boundary_ratio >= 1.0
-    corridor_ratio = (2.97 - 1.0) / (3.0 - 1.0)
+    # Map observed_value onto the BRAINK 1→3 active corridor:
+    #   braink_val = 1 + 2 * boundary_ratio  (1 at source, 3 at failure boundary)
+    #   corridor_ratio = (braink_val - 1) / (3 - 1) = boundary_ratio
+    braink_val = round(1.0 + 2.0 * boundary_ratio, 4)
+    corridor_ratio = round((braink_val - 1.0) / (3.0 - 1.0), 4)
 
     detrimental = status == "failure_calibrating"
     if detrimental:
@@ -232,8 +240,9 @@ def run_spike_boundary_calibration(
         ],
         "ratios": {
             "boundary_ratio": round(boundary_ratio, 4),
+            "braink_value": braink_val,
             "whole_cycle_ratio_297_to_3": 0.99,
-            "corridor_ratio_1_to_3_at_297": round(corridor_ratio, 3),
+            "corridor_ratio_1_to_3": corridor_ratio,
         },
         "classification": {
             "status": status,
