@@ -1,0 +1,46 @@
+name: Uniform Multi-Platform Build
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build:
+    name: ${{ matrix.os }} uniform build
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            target: linux
+            script: scripts/build_linux.sh
+          - os: windows-latest
+            target: windows
+            script: scripts/build_windows.ps1
+          - os: macos-latest
+            target: macos
+            script: scripts/build_macos.sh
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run platform build script (bash)
+        if: runner.os != 'Windows'
+        run: |
+          chmod +x ${{ matrix.script }}
+          ${{ matrix.script }}
+
+      - name: Run platform build script (pwsh)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          & ./${{ matrix.script }}
