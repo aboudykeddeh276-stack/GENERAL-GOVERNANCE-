@@ -1,0 +1,35 @@
+# GENERAL-GOVERNANCE- .gitignore
+# ENVIRONMENT_LOCAL_DEVELOPMENT — safe ignored outputs
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+.env/
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+
+# Editor artifacts
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Test output
+.pytest_cache/
+htmlcov/
+.coverage
+coverage.xml

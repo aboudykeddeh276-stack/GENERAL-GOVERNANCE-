@@ -1,0 +1,42 @@
+{
+  "ARTIFACT_CROSS_REPOSITORY_REGISTER_MD": {
+    "path": "CROSS_REPOSITORY_REGISTER.md",
+    "sha256": "731985ec723920e1e3fef7b580c8bd6e20ee604fe7438d8e88f186566874149b",
+    "state": "STATE_MODEL_LOCAL"
+  },
+  "ARTIFACT_DOCS_GOVERNANCE_AGENTIC_INTELLIGENCE_CLI_MD": {
+    "path": "docs/governance/agentic-intelligence-cli.md",
+    "sha256": "2a0d6defd4718936f78365963d24428b2ac932ba377355850aa5f33fabe6cd1b",
+    "state": "STATE_MODEL_LOCAL"
+  },
+  "ARTIFACT_DOCS_GOVERNANCE_MANIFEST_JSON": {
+    "path": "docs/governance/manifest.json",
+    "sha256": "fd7bcd1b1f2f4435a32bf6d4fbd15824cf7df9ec2a1a9383950ec6976fb559e4",
+    "state": "STATE_MODEL_LOCAL"
+  },
+  "ARTIFACT_DOCS_GOVERNANCE_REPOSITORY_GOVERNANCE_STANDARD_MD": {
+    "path": "docs/governance/repository-governance-standard.md",
+    "sha256": "7976d4e985e14de69eedb39294f2f593d967760aba7d509ea7f4a2a23a95f59a",
+    "state": "STATE_MODEL_LOCAL"
+  },
+  "ARTIFACT_DOCS_GOVERNANCE_STRICT_DEEP_ANALYSIS_COMMENT_MD": {
+    "path": "docs/governance/strict-deep-analysis-comment.md",
+    "sha256": "98cb4497307041b55e5d536f43c5e3cea014520befc74274d26cbdd1cc8ec951",
+    "state": "STATE_MODEL_LOCAL"
+  },
+  "ARTIFACT_GITIGNORE": {
+    "path": ".gitignore",
+    "sha256": "701f43cdb8af9ebb1cfa20a907f637b9cf7abb5138197801288cbad38a2b0d13",
+    "state": "STATE_MODEL_LOCAL"
+  },
+  "ARTIFACT_README_MD": {
+    "path": "README.md",
+    "sha256": "3430e9f9d25362bb1f1d5d7128eb558fa5796aca1d0fb159704fb987943eef12",
+    "state": "STATE_MODEL_LOCAL"
+  },
+  "ARTIFACT_SCRIPTS_VALIDATE_GOVERNANCE_PY": {
+    "path": "scripts/validate-governance.py",
+    "sha256": "44dece2b40ca457ba3d1c5f016e56d3727a61d5b75f853a7a2c672f16b482a50",
+    "state": "STATE_MODEL_LOCAL"
+  }
+}
