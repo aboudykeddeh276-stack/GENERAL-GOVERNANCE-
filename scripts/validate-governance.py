@@ -87,14 +87,14 @@ def expected_manifest(required_files: list[str]) -> dict[str, dict[str, str]]:
             "state": "STATE_MODEL_LOCAL",
         }
 
-    stable_hash = stable_manifest_sha256_from_entries(entries)
+    stable_hash = manifest_stable_sha256_from_entries(entries)
     for entry in entries.values():
         if entry["path"] == MANIFEST_PATH:
             entry["sha256"] = stable_hash
     return dict(sorted(entries.items()))
 
 
-def stable_manifest_sha256_from_entries(entries: dict[str, dict[str, str]]) -> str:
+def manifest_stable_sha256_from_entries(entries: dict[str, dict[str, str]]) -> str:
     stable_entries = json.loads(json.dumps(entries))
     for entry in stable_entries.values():
         if entry.get("path") == MANIFEST_PATH:
@@ -136,10 +136,10 @@ def main() -> int:
         manifest = load_manifest(manifest_path)
         expected_paths = set(REQUIRED_FILES)
         manifest_paths = {entry.get("path") for entry in manifest.values()}
-        missing_manifest_paths = sorted(expected_paths - manifest_paths)
-        extra_manifest_paths = sorted(
-            path for path in manifest_paths - expected_paths if path
-        )
+        only_in_expected = expected_paths - manifest_paths
+        only_in_manifest = manifest_paths - expected_paths
+        missing_manifest_paths = sorted(only_in_expected)
+        extra_manifest_paths = sorted(path for path in only_in_manifest if path)
         for missing_path in missing_manifest_paths:
             failures.append(f"required file missing from manifest: {missing_path}")
         for extra_path in extra_manifest_paths:
