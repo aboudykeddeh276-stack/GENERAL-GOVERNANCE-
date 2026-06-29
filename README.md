@@ -73,7 +73,15 @@ GENERAL-GOVERNANCE-   (GOVERNANCE_ROOT — source of truth)
 
 ## Cross-repository scope
 
-Repositories explicitly in scope: see `CROSS_REPOSITORY_REGISTER.md`.
+- Repositories explicitly in scope: see `CROSS_REPOSITORY_REGISTER.md`.
+- Do not assume access to all repositories; integrations must list exact repositories in scope.
+- Pull and adapt scripts incrementally, validating each integration step before continuing.
+
+## Do better baseline
+
+- Prefer explicit requirements over implied behavior.
+- Convert broad requests into checklist-based, verifiable steps.
+- Prioritize reliability, security, and maintainability over speed.
 
 ## Local check
 
