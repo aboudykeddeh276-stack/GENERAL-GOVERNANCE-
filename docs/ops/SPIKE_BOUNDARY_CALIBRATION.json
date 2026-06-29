@@ -1,0 +1,14 @@
+{
+  "process_id": "SPIKE_BOUNDARY_CALIBRATION",
+  "tick_id": 1,
+  "spike_type": "RUNTIME_EXISTENCE_SPIKE",
+  "near_boundary_297": false,
+  "boundary_3_achieved": false,
+  "proof_status": "committed",
+  "proof_hash": "eccf9c6570eb5529",
+  "ok": true,
+  "process_hash": "9d4597330b0fca28b909140c03667891e7e0ee37c04ab9770df0bb5d6c89cb4c",
+  "process_title": "Spike Boundary Calibration Lane",
+  "lane": "SPIKE_CALIBRATION",
+  "version": "v1.4"
+}
