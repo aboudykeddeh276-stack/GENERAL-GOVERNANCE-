@@ -9,7 +9,9 @@ description = "Brain-inspired virtualized computer with agent-driven uniform cro
 readme = "README.md"
 requires-python = ">=3.10"
 authors = [{ name = "GENERAL-GOVERNANCE-" }]
-dependencies = []
+dependencies = [
+    "rich>=13.0",
+]
 
 [project.scripts]
 vbpc = "virtual_brain_pc.cli:main"

@@ -31,7 +31,16 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: "3.12"
+
+      - name: Install package and dependencies
+        run: python -m pip install -e .
+
+      - name: Run tests
+        run: python -m pytest -q
+
+      - name: Verify ops-run (all 8 lanes)
+        run: python -m virtual_brain_pc.cli ops-run --tick-id 0
 
       - name: Run platform build script (bash)
         if: runner.os != 'Windows'
