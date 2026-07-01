@@ -2,10 +2,12 @@ from __future__ import annotations
 
 import argparse
 import json
+import pathlib
 from typing import List
 
 from .cognition import BrainInspiredController
 from .core import VirtualComputer
+from .governance_automation import run_governance_automation
 from .material_calibration import run_material_failure_calibration
 from .ops import run_internal_ops
 from .orchestrator import SUPPORTED_TARGETS, UniformBuildOrchestrator
@@ -90,6 +92,12 @@ def _organism_run(tick_id: int, payload: dict) -> dict:
     return run_organism_process(input_signal=payload, tick_id=tick_id)
 
 
+def _governance_run(repository_root: str) -> dict:
+    return run_governance_automation(
+        repository_root_absolute_path_string=repository_root,
+    )
+
+
 def _ops_run(tick_id: int) -> dict:
     return run_internal_ops(tick_id=tick_id)
 
@@ -161,6 +169,16 @@ def parse_args(argv: List[str] | None = None) -> argparse.Namespace:
         help="Run all internal operational lanes and report status",
     )
     ops_cmd.add_argument("--tick-id", type=int, default=0)
+
+    governance_cmd = sub.add_parser(
+        "governance-run",
+        help="Run the 1-Keddeh Matrix Standard governance automation engine",
+    )
+    governance_cmd.add_argument(
+        "--repository-root",
+        default=str(pathlib.Path(__file__).resolve().parents[2]),
+        help="Absolute path to the repository root (default: auto-detected)",
+    )
 
     sub.add_parser("registry", help="Print BRAINK registry blocks")
 
@@ -236,6 +254,8 @@ def main(argv: List[str] | None = None) -> int:
         )
     elif args.command == "ops-run":
         result = _ops_run(tick_id=args.tick_id)
+    elif args.command == "governance-run":
+        result = _governance_run(repository_root=args.repository_root)
     elif args.command == "organism-run":
         import json as _json
         result = _organism_run(
