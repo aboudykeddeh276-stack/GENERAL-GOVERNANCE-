@@ -159,14 +159,14 @@ def test_governance_automation_discrepancy_vector_record_is_immutable() -> None:
         discrepancy_and_seed_classification_type_literal_string="MISSING_REQUIRED_GOVERNANCE_ARTIFACT",
         estimated_algorithmic_complexity_score_integer=1,
     )
-    import pytest as _pytest
-    with _pytest.raises((AttributeError, TypeError)):
+    import pytest
+    with pytest.raises((AttributeError, TypeError)):
         record.estimated_algorithmic_complexity_score_integer = 99  # type: ignore[misc]
 
 
 def test_governance_automation_master_controller_rejects_hex_path() -> None:
-    import pytest as _pytest
-    with _pytest.raises(ValueError, match="CRITICAL_NAMING_ERROR"):
+    import pytest
+    with pytest.raises(ValueError, match="CRITICAL_NAMING_ERROR"):
         GlobalMasterRepositoryAutomatedSystemIntegrityAndStateSeedTransferEngineMasterController(
             target_repository_root_directory_absolute_path_string="/repo/path0xcorrupt",
             keddeh_matrix_reference_configuration_blueprint_dictionary={},

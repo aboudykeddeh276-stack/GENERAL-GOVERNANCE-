@@ -323,9 +323,6 @@ PROCESS_CATALOGUE: List[OpsProcess] = [
     ),
 ]
 
-PROCESS_INDEX: Dict[str, OpsProcess] = {p.process_id: p for p in PROCESS_CATALOGUE}
-
-
 # ---------------------------------------------------------------------------
 # Process 9 — GOVERNANCE_AUTOMATION_ENGINE
 # Executes the full 1-Keddeh Matrix Standard governance automation lifecycle:

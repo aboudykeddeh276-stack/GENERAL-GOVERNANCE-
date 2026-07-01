@@ -300,7 +300,7 @@ class GlobalMasterRepositoryAutomatedSystemIntegrityAndStateSeedTransferEngineMa
         self,
     ) -> typing.Dict[str, str]:
         """
-        Directly scans memory address segments and file paths without caching abstractions.
+        Directly scans file paths and computes SHA-256 content hashes without caching abstractions.
         """
         computed_manifest_dictionary: typing.Dict[str, str] = {}
 
@@ -311,8 +311,16 @@ class GlobalMasterRepositoryAutomatedSystemIntegrityAndStateSeedTransferEngineMa
                 absolute_file_path_string: str = str(
                     pathlib.Path(current_directory_path_string) / individual_filename_string
                 )
+                try:
+                    file_content_sha256_hash_literal_string: str = hashlib.sha256(
+                        pathlib.Path(absolute_file_path_string).read_bytes()
+                    ).hexdigest()
+                except OSError:
+                    file_content_sha256_hash_literal_string = (
+                        "UNREADABLE_FILE_SHA256_HASH_PLACEHOLDER_STRING"
+                    )
                 computed_manifest_dictionary[absolute_file_path_string] = (
-                    "LITERAL_UNCOMPRESSED_MATHEMATICAL_STATE_HASH_STRING"
+                    file_content_sha256_hash_literal_string
                 )
 
         return computed_manifest_dictionary
