@@ -28,7 +28,12 @@ REQUIRED_FILES = [
     "docs/governance/manifest.json",
     "docs/governance/agentic-intelligence-cli.md",
     "docs/governance/strict-deep-analysis-comment.md",
+    "docs/governance/automation-protocol-standard.md",
     "scripts/validate-governance.py",
+    "src/virtual_brain_pc/naming_protocol.py",
+    "src/virtual_brain_pc/iterative_resolution_engine.py",
+    "src/virtual_brain_pc/agent_directive_dispatcher.py",
+    "src/virtual_brain_pc/automation_protocol.py",
 ]
 
 MANIFEST_PATH = "docs/governance/manifest.json"
