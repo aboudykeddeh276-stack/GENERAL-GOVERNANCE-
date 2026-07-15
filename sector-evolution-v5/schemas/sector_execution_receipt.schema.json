@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "kex://schemas/sector-execution-receipt-v5",
+  "title": "KEX Sector Execution Receipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["receipt_id", "sector_id", "axes", "bilateral_residual", "proof_product"],
+  "properties": {
+    "receipt_id": {"type": "string", "minLength": 1},
+    "sector_id": {"type": "string", "minLength": 1},
+    "axes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["anchor", "factor", "translation", "action", "validation", "continuity"],
+      "properties": {
+        "anchor": {"type": ["string", "number", "integer"]},
+        "factor": {"type": ["string", "number", "integer"]},
+        "translation": {"type": ["string", "number", "integer"]},
+        "action": {"type": ["string", "number", "integer"]},
+        "validation": {"type": ["string", "number", "integer"]},
+        "continuity": {"type": ["string", "number", "integer"]}
+      }
+    },
+    "bilateral_residual": {"type": ["string", "number", "integer"]},
+    "proof_product": {"type": "integer", "enum": [0, 1]}
+  }
+}
