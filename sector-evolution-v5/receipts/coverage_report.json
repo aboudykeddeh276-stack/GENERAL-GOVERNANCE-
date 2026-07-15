@@ -1,0 +1,14 @@
+{
+  "report_id": "KEX-BRAINK-SECTOR-COVERAGE-V5",
+  "total_repositories": 25,
+  "covered_repositories": 25,
+  "coverage_fraction": "25/25",
+  "uncovered": [],
+  "duplicate_assignments": [],
+  "operational_sectors": 15,
+  "coordinator_packages": 1,
+  "compiled_packages": 16,
+  "tests_run": 8,
+  "tests_status": "PASS",
+  "status": "COMPLETED"
+}
