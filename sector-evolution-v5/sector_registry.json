@@ -1,0 +1,159 @@
+{
+  "registry_id": "KEX-BRAINK-SECTOR-REGISTRY-V5",
+  "registry_version": "5.0",
+  "architect": "A.KEDDEH",
+  "system": "BRAINK",
+  "calculus": "KEX",
+  "parent_package": "KEX_BRAINK_SEED_COMPILER_V4",
+  "operational_sector_count": 15,
+  "coordinator_count": 1,
+  "total_compiled_packages": 16,
+  "github_repository_count": 25,
+  "github_repository_coverage": "25/25",
+  "sectors": [
+    {
+      "sector_id": "S00_MASTER_COORDINATOR",
+      "title": "BRAINK Master Sector Coordinator",
+      "repo_count": 0,
+      "repo_bindings": [],
+      "conceptual_systems": ["BRAINK", "KEX", "KERA", "IL-LLM", "KCPU", "Web4", "Workbook OS"],
+      "target_words": 713,
+      "package_path": "sectors/S00_MASTER_COORDINATOR"
+    },
+    {
+      "sector_id": "S01_BRAINK_CORE_ORCHESTRATION",
+      "title": "BRAINK Core and Orchestration",
+      "repo_count": 2,
+      "repo_bindings": ["aboudykeddeh276-stack/BRAINK", "aboudykeddeh276-stack/BRAINK_DESKTOP_ORGANISED"],
+      "conceptual_systems": ["BRAINK", "BRAINK CLI", "NativeChatBot", "orchestration", "recovery"],
+      "target_words": 707,
+      "package_path": "sectors/S01_BRAINK_CORE_ORCHESTRATION"
+    },
+    {
+      "sector_id": "S02_KEX_ALGEBRA_THEOREMS",
+      "title": "KEX Algebra, Theorems, and Calibration",
+      "repo_count": 4,
+      "repo_bindings": ["aboudykeddeh276-stack/KEDDEH-ALGEBRA-CORES", "aboudykeddeh276-stack/1AXIS-MATRIX-OS", "aboudykeddeh276-stack/UNIVERSAL-CALIBRATION-MATRIX", "aboudykeddeh276-stack/random.k.test-"],
+      "conceptual_systems": ["Keddeh Theorem", "Corrected Zero Doctrine", "HEX algebra", "recurrences", "calibration"],
+      "target_words": 712,
+      "package_path": "sectors/S02_KEX_ALGEBRA_THEOREMS"
+    },
+    {
+      "sector_id": "S03_AGENT_SHELL_APPLICATION",
+      "title": "Agent Shell, Application, and Backend",
+      "repo_count": 3,
+      "repo_bindings": ["aboudykeddeh276-stack/ai-shell", "aboudykeddeh276-stack/app", "aboudykeddeh276-stack/backend"],
+      "conceptual_systems": ["AI shell", "application", "backend", "agent task surface", "API"],
+      "target_words": 715,
+      "package_path": "sectors/S03_AGENT_SHELL_APPLICATION"
+    },
+    {
+      "sector_id": "S04_KERA_NETWORK_SERVER_FABRIC",
+      "title": "KERA Network and Server Fabric",
+      "repo_count": 3,
+      "repo_bindings": ["aboudykeddeh276-stack/KERA_SERVER", "aboudykeddeh276-stack/SERVERS-KEDDEHSYSTEMS", "aboudykeddeh276-stack/KEDDEH-CLOUD-SERVERS-ID-1"],
+      "conceptual_systems": ["KERA", "DNS lanes", "health server", "service catalog", "cloud server identity"],
+      "target_words": 717,
+      "package_path": "sectors/S04_KERA_NETWORK_SERVER_FABRIC"
+    },
+    {
+      "sector_id": "S05_SOFTWARE_NODES_CODE_SPACE",
+      "title": "Software Nodes, Code Space, and Update Lanes",
+      "repo_count": 3,
+      "repo_bindings": ["aboudykeddeh276-stack/KEDDEH_SOFTWARE_NODES", "aboudykeddeh276-stack/K-SYSTEMS-CODE-SPACE-", "aboudykeddeh276-stack/K-SYSTEM_UPDATE_LANE_PROCESS_x-x"],
+      "conceptual_systems": ["software nodes", "code space", "update lanes", "dependency graph", "repository adapters"],
+      "target_words": 717,
+      "package_path": "sectors/S05_SOFTWARE_NODES_CODE_SPACE"
+    },
+    {
+      "sector_id": "S06_VIRTUAL_MEMORY_STATE",
+      "title": "Virtual Memory, State Roots, and Rehydration",
+      "repo_count": 1,
+      "repo_bindings": ["aboudykeddeh276-stack/VIRTUALISED_MEMORY"],
+      "conceptual_systems": ["virtualized memory", "sparse allocation", "state root", "event replay", "rehydration"],
+      "target_words": 719,
+      "package_path": "sectors/S06_VIRTUAL_MEMORY_STATE"
+    },
+    {
+      "sector_id": "S07_BILATERAL_LEARNING_IL_LLM",
+      "title": "Bilateral Learning, Mirror Lane, and IL-LLM",
+      "repo_count": 1,
+      "repo_bindings": ["aboudykeddeh276-stack/KSYSTEMS_LEARNING-"],
+      "conceptual_systems": ["bilateral polygon learning", "Mirror Lane", "IL-LLM", "route-scoped bias", "retention"],
+      "target_words": 718,
+      "package_path": "sectors/S07_BILATERAL_LEARNING_IL_LLM"
+    },
+    {
+      "sector_id": "S08_UI_DASHBOARD_OPERATOR",
+      "title": "Operator UI, Dashboards, and Reflection",
+      "repo_count": 2,
+      "repo_bindings": ["aboudykeddeh276-stack/KEX_HYPERDRIVE_DASHBOARD_UI", "aboudykeddeh276-stack/emrg-attempt-ui"],
+      "conceptual_systems": ["operator dashboard", "AI landing page", "CELL_GPU", "visual state bus", "reflection"],
+      "target_words": 719,
+      "package_path": "sectors/S08_UI_DASHBOARD_OPERATOR"
+    },
+    {
+      "sector_id": "S09_QUANTUM_MATRIX_RUNTIME",
+      "title": "Quantum and Matrix Runtime",
+      "repo_count": 3,
+      "repo_bindings": ["aboudykeddeh276-stack/quantum-computer-by-keddeh-systems", "aboudykeddeh276-stack/KEDDEH-SYSTEMS-QUANTUM-RUNTIME-MATRIX-", "aboudykeddeh276-stack/Quantum-Dashboard"],
+      "conceptual_systems": ["quantum runtime", "matrix runtime", "quantum dashboard", "simulation", "hardware boundary"],
+      "target_words": 720,
+      "package_path": "sectors/S09_QUANTUM_MATRIX_RUNTIME"
+    },
+    {
+      "sector_id": "S10_MINING_ENERGY_THERMODYNAMICS",
+      "title": "Mining, Energy, Thermodynamics, and TER",
+      "repo_count": 2,
+      "repo_bindings": ["aboudykeddeh276-stack/MINING", "aboudykeddeh276-stack/btc-mining-edu"],
+      "conceptual_systems": ["mining", "thermodynamic ledger", "TER", "ELC", "energy accounting"],
+      "target_words": 719,
+      "package_path": "sectors/S10_MINING_ENERGY_THERMODYNAMICS"
+    },
+    {
+      "sector_id": "S11_GOVERNANCE_SECURITY_PROOF",
+      "title": "Governance, Security, Ethics, and Proof",
+      "repo_count": 1,
+      "repo_bindings": ["aboudykeddeh276-stack/GENERAL-GOVERNANCE-"],
+      "conceptual_systems": ["governance", "security", "ethics", "proof gates", "manifest integrity"],
+      "target_words": 716,
+      "package_path": "sectors/S11_GOVERNANCE_SECURITY_PROOF"
+    },
+    {
+      "sector_id": "S12_WORKBOOK_OS_WEB4_KCPU",
+      "title": "Workbook OS, Web4, KCPU, and AI Landing",
+      "repo_count": 0,
+      "repo_bindings": [],
+      "conceptual_systems": ["KEX Workbook OS", "Web4", "KCPU", "CELL_GPU", "MasterCore", "26-node boot route"],
+      "target_words": 719,
+      "package_path": "sectors/S12_WORKBOOK_OS_WEB4_KCPU"
+    },
+    {
+      "sector_id": "S13_RESEARCH_EVIDENCE_PUBLICATION",
+      "title": "Research, Evidence, Mathematics, and Publication",
+      "repo_count": 0,
+      "repo_bindings": [],
+      "conceptual_systems": ["research report", "theorem register", "artifact verification", "citations", "reproducibility"],
+      "target_words": 717,
+      "package_path": "sectors/S13_RESEARCH_EVIDENCE_PUBLICATION"
+    },
+    {
+      "sector_id": "S14_LINGUISTIC_BIOETHICS_AGENT_POLICY",
+      "title": "KEX Linguistic Processing, Bioethics, and Agent Policy",
+      "repo_count": 0,
+      "repo_bindings": [],
+      "conceptual_systems": ["KEX Linguistic Process Constraints", "operational affect", "human boundary", "agent instruction compiler"],
+      "target_words": 723,
+      "package_path": "sectors/S14_LINGUISTIC_BIOETHICS_AGENT_POLICY"
+    },
+    {
+      "sector_id": "S15_CODEX_FLEET_AUTOMATION",
+      "title": "Codex Fleet, PR Execution, and Integration",
+      "repo_count": 0,
+      "repo_bindings": [],
+      "conceptual_systems": ["Codex fleet", "worker packets", "pull requests", "execution receipts", "integration"],
+      "target_words": 721,
+      "package_path": "sectors/S15_CODEX_FLEET_AUTOMATION"
+    }
+  ]
+}
