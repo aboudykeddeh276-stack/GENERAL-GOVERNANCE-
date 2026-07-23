@@ -287,9 +287,11 @@ def run_all() -> int:
     for t in _TESTS:
         try:
             t()
-        except Exception as exc:  # noqa: BLE001
+        except (ImportError, AttributeError, KeyError, TypeError, ValueError) as exc:
             test_id = int(t.__name__.split("_")[1])
             _fail(test_id, t.__name__, f"unexpected exception: {exc}")
+        except Exception:  # noqa: BLE001
+            raise
 
     passed = [r for r in _results if r["status"] == "PASS"]
     failed = [r for r in _results if r["status"] == "FAIL"]

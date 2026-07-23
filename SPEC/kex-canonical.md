@@ -31,7 +31,7 @@ The BRAINK/KEX active-state numerical model assigns concrete roles to a fixed se
 | `2` | Active runtime state | The system under active crossing, load, electricity, heat, or transformation |
 | `-2` | Lower boundary rail | The lower limit the active state crosses against |
 | `+2` | Upper boundary rail | The upper limit the active state crosses against |
-| `2.97` | Near-boundary band | The system is extremely close to boundary achievement or failure (99 % of the full 3 boundary) |
+| `2.97` | Near-boundary band | The system is extremely close to boundary achievement or failure (99% of the full 3 boundary) |
 | `3` | Boundary achievement | The threshold is reached; a new state, failure, transition, or signal is produced |
 | `0` | Symbolic result only | Cancellation, absence, or boundary label — **never** a live active weight |
 
