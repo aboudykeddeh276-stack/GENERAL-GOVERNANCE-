@@ -65,7 +65,7 @@ def test_at01_assert_passes_for_active() -> None:
 # AT-02 — topologicalDistance(−2, 1) == 1  [AUTHOR TO RATIFY]
 # ---------------------------------------------------------------------------
 
-def test_at02_topology_distance_pending() -> None:
+def test_at02_topological_distance_pending() -> None:
     # Returns None until §1.2 is ratified by the author.
     result = topological_distance(-2, 1)
     assert result is None, (
