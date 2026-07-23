@@ -11,7 +11,7 @@
   },
   "ARTIFACT_DOCS_GOVERNANCE_MANIFEST_JSON": {
     "path": "docs/governance/manifest.json",
-    "sha256": "3ee21e3686fd71be659ae43107db4573ada5fa4d019a58adc1eb2ac7aa03ad54",
+    "sha256": "e7ba9b768e40a45596c806e3e80c503267c87afb8bbf73b5b3291c5aa61a29d1",
     "state": "STATE_MODEL_LOCAL"
   },
   "ARTIFACT_DOCS_GOVERNANCE_REPOSITORY_GOVERNANCE_STANDARD_MD": {
@@ -31,12 +31,27 @@
   },
   "ARTIFACT_README_MD": {
     "path": "README.md",
-    "sha256": "3430e9f9d25362bb1f1d5d7128eb558fa5796aca1d0fb159704fb987943eef12",
+    "sha256": "0a5feca34839906dcbbbfcc4f432ab8b9f262133d433148241d048a138ff0a40",
     "state": "STATE_MODEL_LOCAL"
   },
   "ARTIFACT_SCRIPTS_VALIDATE_GOVERNANCE_PY": {
     "path": "scripts/validate-governance.py",
-    "sha256": "f1f88729704d15a97bf231f3031c65a2bf09cd173819c766bac50fe04abbef23",
+    "sha256": "2bf95a4a51ae79bf0376df383c8e62acdecab3493aeaf8f055a02d21625c439c",
+    "state": "STATE_MODEL_LOCAL"
+  },
+  "ARTIFACT_SPEC_CONFORMANCE_CHECKLIST_MD": {
+    "path": "SPEC/conformance-checklist.md",
+    "sha256": "89e08383cbefb16e7375fe6a109bca7903e4096cf10ff07186bff9ca7bb71cdd",
+    "state": "STATE_MODEL_LOCAL"
+  },
+  "ARTIFACT_SPEC_KEX_CANONICAL_MD": {
+    "path": "SPEC/kex-canonical.md",
+    "sha256": "41e198e91e633237936858fedcd3f2cf7ab0584146567837a30a4ab305ff2a75",
+    "state": "STATE_MODEL_LOCAL"
+  },
+  "ARTIFACT_SPEC_KEX_REFERENCE_VALIDATOR_PY": {
+    "path": "SPEC/kex_reference_validator.py",
+    "sha256": "c76e9c13264da19fe2c49ca6e7f9e2e4a1ffbeee6efbe9c92cb4378ba23fd44d",
     "state": "STATE_MODEL_LOCAL"
   }
 }
