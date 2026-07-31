@@ -5,9 +5,12 @@ import json
 from dataclasses import dataclass
 from typing import Any, Callable, Dict, List
 
+import pathlib
+
 from .braink_runtime import run_full_braink_lane
 from .cognition import BrainInspiredController
 from .core import VirtualComputer
+from .governance_automation import run_governance_automation
 from .material_calibration import run_material_failure_calibration
 from .organism import run_organism_process
 from .orchestrator import UniformBuildOrchestrator
@@ -320,7 +323,55 @@ PROCESS_CATALOGUE: List[OpsProcess] = [
     ),
 ]
 
-PROCESS_INDEX: Dict[str, OpsProcess] = {p.process_id: p for p in PROCESS_CATALOGUE}
+# ---------------------------------------------------------------------------
+# Process 9 — GOVERNANCE_AUTOMATION_ENGINE
+# Executes the full 1-Keddeh Matrix Standard governance automation lifecycle:
+# FILESYSTEM_TOPOLOGY_SCAN → KEDDEH_MATRIX_EVALUATION →
+# DISCREPANCY_DECOMPOSITION → RESOLUTION_TELEMETRY_ARCHIVE →
+# POST_MUTATION_REVERIFICATION → SUCCESSFUL_ALIGNMENT_TERMINATION
+# ---------------------------------------------------------------------------
+def _proc_governance_automation(tick_id: int = 0) -> Dict[str, Any]:
+    repository_root_string: str = str(
+        pathlib.Path(__file__).resolve().parents[2]
+    )
+    result = run_governance_automation(
+        repository_root_absolute_path_string=repository_root_string
+    )
+    return {
+        "process_id": "GOVERNANCE_AUTOMATION_ENGINE",
+        "tick_id": tick_id,
+        "execution_status": result.get("execution_status_name_string", "UNKNOWN"),
+        "keddeh_matrix_alignment_verified": result.get(
+            "keddeh_matrix_alignment_verified_boolean", False
+        ),
+        "all_governance_artifacts_present": result.get(
+            "all_governance_artifacts_present_boolean", False
+        ),
+        "total_discrepancy_count": result.get("total_discrepancy_count_integer", -1),
+        "recursive_depth_reached": result.get(
+            "recursive_decomposition_depth_reached_integer", 0
+        ),
+        "engine_hash": result.get("engine_execution_deterministic_hash_string", ""),
+        "ok": result.get("ok", False),
+    }
+
+
+PROCESS_CATALOGUE.append(
+    OpsProcess(
+        process_id="GOVERNANCE_AUTOMATION_ENGINE",
+        title="1-Keddeh Matrix Governance Automation Engine",
+        lane="GOVERNANCE_AUTOMATION",
+        version="v1.0",
+        description=(
+            "Execute full 1-Keddeh Matrix Standard governance automation lifecycle: "
+            "topology scan, matrix evaluation, discrepancy decomposition, resolution, "
+            "and post-mutation re-verification."
+        ),
+        run=_proc_governance_automation,
+    )
+)
+
+PROCESS_INDEX = {p.process_id: p for p in PROCESS_CATALOGUE}
 
 
 def run_single_process(process_id: str, tick_id: int = 0) -> Dict[str, Any]:
