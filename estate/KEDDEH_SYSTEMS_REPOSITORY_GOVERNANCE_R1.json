@@ -1,0 +1,26 @@
+{
+  "schema": "keddah.repository-governance.r1/v1",
+  "rule": "one logical sector -> one canonical repository -> one primary authority boundary",
+  "required_structure": ["README.md","ARCHITECTURE.md","AUTHORITY.md","DEPENDENCIES.md","runtime/","tests/","deploy/","evidence/","receipts/","docs/"],
+  "required_questions": ["WHAT DOES THIS SECTOR OWN?","WHAT DOES IT EXECUTE?","WHAT DOES IT DEPEND ON?","WHAT MAY IT MUTATE?","WHAT PROVES IT WORKED?"],
+  "no_silent_cross_sector_ownership": true,
+  "root_manifest_role": "identity, ownership, dependencies, versions and proof references only; no implementation code",
+  "sectors": [
+    {"sector":"BRAINK","desired_repo":"aboudykeddeh276-stack/BRAINK","status":"EXISTS","authority":"core runtime, Observer², orchestration, VFS state/proof mechanics"},
+    {"sector":"KEX","desired_repo":"aboudykeddeh276-stack/KEX","status":"MISSING_NAMED_REPO","authority":"coordinate/addressing, execution semantics, signal propagation, kernel mechanics"},
+    {"sector":"SERVERS","desired_repo":"aboudykeddeh276-stack/SERVERS-KEDDEHSYSTEMS","status":"EXISTS","authority":"server runtimes, DA server process execution, host bindings, ingress, server qualification"},
+    {"sector":"DOMAIN_AUTHORITY","desired_repo":"aboudykeddeh276-stack/DOMAIN-AUTHORITY","status":"MISSING_NAMED_REPO","authority":"registrar logic, zone/delegation semantics, DNSSEC, authority receipts"},
+    {"sector":"NETWORK_FABRIC","desired_repo":"aboudykeddeh276-stack/NETWORK-FABRIC","status":"MISSING_NAMED_REPO","authority":"routers, bridges, mesh, VPN/TL, NAT, anycast, load balancing"},
+    {"sector":"CLOUD_INFRASTRUCTURE","desired_repo":"aboudykeddeh276-stack/CLOUD-INFRASTRUCTURE","status":"MISSING_NAMED_REPO","current_related":["aboudykeddeh276-stack/KEDDEH-CLOUD-SERVERS-ID-1","aboudykeddeh276-stack/kcloud-substrate"],"authority":"public compute, runtime allocation, cloud/edge substrates"},
+    {"sector":"K_DRIVE","desired_repo":"aboudykeddeh276-stack/K-DRIVE","status":"MISSING_NAMED_REPO","current_related":["aboudykeddeh276-stack/VIRTUALISED_MEMORY","aboudykeddeh276-stack/virtualized-storage"],"authority":"storage abstraction, logical volumes, persistence/VFS substrate"},
+    {"sector":"IL_LLM","desired_repo":"aboudykeddeh276-stack/IL-LLM","status":"MISSING_NAMED_REPO","authority":"language/runtime model, dictionaries, ontology, workbook mechanics"},
+    {"sector":"WORKBOOK_OS","desired_repo":"aboudykeddeh276-stack/WORKBOOK-OS","status":"MISSING_NAMED_REPO","authority":"workbook-native execution and ledgers"},
+    {"sector":"CASEPATH","desired_repo":"aboudykeddeh276-stack/CASEPATH","status":"MISSING_NAMED_REPO","authority":"CasePath product/runtime/service pipeline"},
+    {"sector":"CLAIMPATH","desired_repo":"aboudykeddeh276-stack/CLAIMPATH","status":"MISSING_NAMED_REPO","authority":"ClaimPath product/runtime/service pipeline"},
+    {"sector":"WEB_FABRIC","desired_repo":"aboudykeddeh276-stack/WEB-FABRIC","status":"MISSING_NAMED_REPO","authority":"sites, frontages, deployment surfaces, domain-to-site projection"},
+    {"sector":"SECURITY_AUTHORITY","desired_repo":"aboudykeddeh276-stack/SECURITY-AUTHORITY","status":"MISSING_NAMED_REPO","authority":"identity/signature/certificates/trust anchors/audit policy"},
+    {"sector":"AGENTS_ORCHESTRATION","desired_repo":"aboudykeddeh276-stack/AGENTS-ORCHESTRATION","status":"MISSING_NAMED_REPO","authority":"agents, routing, workforce/process orchestration"},
+    {"sector":"EVIDENCE_LEDGER","desired_repo":"aboudykeddeh276-stack/EVIDENCE-LEDGER","status":"MISSING_NAMED_REPO","authority":"qualifications, receipts, benchmarks, conformance"}
+  ],
+  "transition_rule": "Existing implementations may remain in current repositories only with explicit authority annotations and migration targets; no new cross-sector ownership is to be introduced."
+}
