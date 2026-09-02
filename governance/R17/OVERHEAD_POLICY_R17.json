@@ -1,0 +1,8 @@
+{
+  "schema":"keddeh.overhead-policy/v1",
+  "ring1":["addresses","bindings","queues","working_state","observer_summaries","continuations"],
+  "ring2":["documents","logs","historic_receipts","datasets","models","media","snapshots"],
+  "decision_hierarchy":["deterministic_rule","small_model","large_model","human_review"],
+  "metrics":["cpu_ms","gpu_ms","memory_bytes","storage_bytes","network_bytes","llm_input_tokens","llm_output_tokens","external_calls","human_review_seconds","cost_minor"],
+  "adapter_controls":["rate_limit","timeout","retry","backoff","circuit_breaker","idempotency","cache_or_batch"]
+}
