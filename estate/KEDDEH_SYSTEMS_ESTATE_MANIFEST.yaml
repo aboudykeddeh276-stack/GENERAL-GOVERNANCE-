@@ -1,0 +1,97 @@
+schema: keddeh.systems.estate-manifest.v1
+owner: aboudykeddeh276-stack
+governance_projection_repo: aboudykeddeh276-stack/GENERAL-GOVERNANCE-
+sectors:
+  braink:
+    repo: aboudykeddeh276-stack/BRAINK
+    class: runtime
+    status: CANONICAL_REPO_PRESENT
+    purpose: "core runtime, Observer², orchestration, VFS, state/proof mechanics"
+  kex:
+    repo: aboudykeddeh276-stack/KEX
+    class: runtime
+    status: LEGACY_REPOS_OBSERVED_AWAITING_CANONICAL_PROVISIONING
+    purpose: "coordinate/addressing, execution semantics, signal propagation, kernel mechanics"
+    legacy_sources:
+      - aboudykeddeh276-stack/kex-braink-substrate
+      - aboudykeddeh276-stack/KEDDEH-ALGEBRA-CORES
+  servers_keddehsystems:
+    repo: aboudykeddeh276-stack/SERVERS-KEDDEHSYSTEMS
+    class: infrastructure
+    status: CANONICAL_REPO_PRESENT
+    purpose: "server runtimes, DA servers, host bindings, ingress, server qualification"
+  domain_authority:
+    repo: aboudykeddeh276-stack/DOMAIN-AUTHORITY
+    class: authority
+    status: AWAITING_CANONICAL_REPOSITORY_PROVISIONING
+    purpose: "registrar logic, DNS zones, delegation tooling, DNSSEC, authority receipts"
+  network_fabric:
+    repo: aboudykeddeh276-stack/NETWORK-FABRIC
+    class: infrastructure
+    status: AWAITING_CANONICAL_REPOSITORY_PROVISIONING
+    purpose: "routers, bridges, mesh, VPN/TL transports, NAT, anycast, load balancing"
+  cloud_infrastructure:
+    repo: aboudykeddeh276-stack/CLOUD-INFRASTRUCTURE
+    class: infrastructure
+    status: LEGACY_REPOS_OBSERVED_AWAITING_CANONICAL_PROVISIONING
+    purpose: "public compute hosts, VPS/runtime allocation, edge/cloud substrates"
+    legacy_sources:
+      - aboudykeddeh276-stack/kcloud-substrate
+      - aboudykeddeh276-stack/KEDDEH-CLOUD-SERVERS-ID-1
+  k_drive:
+    repo: aboudykeddeh276-stack/K-DRIVE
+    class: storage
+    status: LEGACY_REPOS_OBSERVED_AWAITING_CANONICAL_PROVISIONING
+    purpose: "storage abstraction, volumes, persistence, VFS substrate mechanics"
+    legacy_sources:
+      - aboudykeddeh276-stack/virtualized-storage
+      - aboudykeddeh276-stack/VIRTUALISED_MEMORY
+  il_llm:
+    repo: aboudykeddeh276-stack/IL-LLM
+    class: runtime
+    status: AWAITING_CANONICAL_REPOSITORY_PROVISIONING
+    purpose: "language/runtime model, dictionaries, ontology, workbook mechanics"
+  workbook_os:
+    repo: aboudykeddeh276-stack/WORKBOOK-OS
+    class: runtime
+    status: LEGACY_REPOS_OBSERVED_AWAITING_CANONICAL_PROVISIONING
+    purpose: "workbook-native execution, scheduler, ledgers, sheet/runtime bindings"
+    legacy_sources:
+      - aboudykeddeh276-stack/1AXIS-MATRIX-OS
+  casepath:
+    repo: aboudykeddeh276-stack/CASEPATH
+    class: product
+    status: AWAITING_CANONICAL_REPOSITORY_PROVISIONING
+    purpose: "CasePath product/runtime/service pipeline only"
+  claimpath:
+    repo: aboudykeddeh276-stack/CLAIMPATH
+    class: product
+    status: AWAITING_CANONICAL_REPOSITORY_PROVISIONING
+    purpose: "ClaimPath product/runtime/service pipeline only"
+  web_fabric:
+    repo: aboudykeddeh276-stack/WEB-FABRIC
+    class: projection
+    status: AWAITING_CANONICAL_REPOSITORY_PROVISIONING
+    purpose: "public sites, frontages, deployment surfaces, domain-to-site projection"
+  edge_iot:
+    repo: aboudykeddeh276-stack/EDGE-IOT
+    class: infrastructure
+    status: AWAITING_CANONICAL_REPOSITORY_PROVISIONING
+    purpose: "IoT edge nodes, telemetry, constrained runtimes, Observer² edge probes"
+  security_authority:
+    repo: aboudykeddeh276-stack/SECURITY-AUTHORITY
+    class: authority
+    status: AWAITING_CANONICAL_REPOSITORY_PROVISIONING
+    purpose: "identity, HMAC/signature policy, certificates, trust anchors, audit rules"
+  agents_orchestration:
+    repo: aboudykeddeh276-stack/AGENTS-ORCHESTRATION
+    class: runtime
+    status: LEGACY_REPOS_OBSERVED_AWAITING_CANONICAL_PROVISIONING
+    purpose: "superagents, operator agents, routing, workforce/process orchestration"
+    legacy_sources:
+      - aboudykeddeh276-stack/ai-shell
+  evidence_ledger:
+    repo: aboudykeddeh276-stack/EVIDENCE-LEDGER
+    class: evidence
+    status: AWAITING_CANONICAL_REPOSITORY_PROVISIONING
+    purpose: "qualifications, receipts, benchmark evidence, conformance reports"
