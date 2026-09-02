@@ -1,0 +1,91 @@
+{
+  "schema": "keddeh.legal-to-operating-identity-process.r1/v1",
+  "process_id": "PROCESS://KEDDEH/LEGAL-TO-OPERATING-IDENTITY/R1",
+  "authority_repo": "aboudykeddeh276-stack/GENERAL-GOVERNANCE-",
+  "purpose": "Resolve Keddeh Systems operating identity to The Layna Company Pty Limited legal holder before consequential estate actions.",
+  "canonical_identity": {
+    "legal_entity": {
+      "id": "organisation://the-layna-company",
+      "legal_name": "THE LAYNA COMPANY PTY LIMITED",
+      "acn": "691036236",
+      "abn": "79691036236",
+      "entity_type": "AUSTRALIAN_PRIVATE_COMPANY"
+    },
+    "business_identity": {
+      "id": "business-name://keddeh-systems",
+      "business_name": "Keddeh Systems",
+      "class": "REGISTERED_BUSINESS_NAME",
+      "operating_authority": "KEDDEH_SYSTEMS",
+      "legal_holder": "organisation://the-layna-company"
+    },
+    "relationship": "BUSINESS_NAME_HELD_BY_LEGAL_ENTITY"
+  },
+  "mandatory_decision_test": "AM I DOING WHAT I SHOULD BE DOING?",
+  "states": [
+    "INTENT_RECEIVED",
+    "IDENTITY_RESOLVED",
+    "ACTION_CLASSIFIED",
+    "SECTOR_AUTHORITY_RESOLVED",
+    "LEGAL_OR_OPERATING_IDENTITY_BOUND",
+    "ACTION_EXECUTED",
+    "READBACK_OBSERVED",
+    "RECEIPT_RECORDED",
+    "DESCENDANT_FOLLOWED",
+    "COMPLETE_OR_RECURSE"
+  ],
+  "steps": [
+    {
+      "seq": 1,
+      "action": "resolve_identity",
+      "mechanic": "KeddehLegalIdentityAdapter.resolve",
+      "input": ["KEDDEH_SYSTEMS", "business-name://keddeh-systems", "ABN", "ACN", "legal entity URI"]
+    },
+    {
+      "seq": 2,
+      "action": "classify_action",
+      "rule": "contracts/invoices/tax/regulatory/banking/legal_notice => legal entity primary; technical/product/service/domain/frontage/support/publishing => business identity primary"
+    },
+    {
+      "seq": 3,
+      "action": "resolve_sector_owner",
+      "rule": "identity adapter never substitutes for the owning sector actuator"
+    },
+    {
+      "seq": 4,
+      "action": "bind_identity",
+      "mechanic": "KeddehLegalIdentityAdapter.bind_transaction_identity"
+    },
+    {
+      "seq": 5,
+      "action": "execute_real_mechanic",
+      "rule": "invoke the owning sector adapter; do not substitute registry, diagram, manifest, or narrative for execution"
+    },
+    {
+      "seq": 6,
+      "action": "readback",
+      "rule": "observe the actual mutated state before promotion"
+    },
+    {
+      "seq": 7,
+      "action": "record_receipt",
+      "required_fields": ["operating_identity", "legal_holder", "sector", "action", "authority", "before_state", "after_state", "evidence_root"]
+    },
+    {
+      "seq": 8,
+      "action": "follow_descendant",
+      "rule": "if execution instantiated a domain, server, contract, invoice, customer file, repository, publication, runtime, agent, or other descendant, enter it and recurse"
+    }
+  ],
+  "mutation_policy": {
+    "GENERAL-GOVERNANCE-": "OWNS_IDENTITY_RELATIONSHIP_AND_RESOLUTION_RULE",
+    "sector_repositories": "REFERENCE_IDENTITY_AND_OWN_THEIR_SECTOR_MUTATIONS",
+    "forbidden": [
+      "duplicate legal identity records as independent truths",
+      "treat Keddeh Systems as a separate incorporated company",
+      "treat The Layna Company Pty Limited and Keddeh Systems as competing identities",
+      "silently overwrite parent-holder lineage"
+    ]
+  },
+  "adapter": "authority/legal_identity/KEDDEH_LEGAL_IDENTITY_ADAPTER_R1.py",
+  "skill": "skills/keddeh-organisation-authority/SKILL.md"
+}
