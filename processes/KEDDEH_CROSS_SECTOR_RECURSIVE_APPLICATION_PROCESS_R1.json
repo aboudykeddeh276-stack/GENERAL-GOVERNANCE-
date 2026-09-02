@@ -1,0 +1,47 @@
+{
+  "schema": "keddah.cross-sector-recursive-process.r1/v1",
+  "decision_test": "AM I DOING WHAT I SHOULD BE DOING?",
+  "purpose": "Carry one work identity recursively through authoritative sector boundaries without copying sector implementations or losing legal identity, state, lineage, evidence, failure state or continuation.",
+  "invariants": [
+    "one work_id survives the whole chain",
+    "organisation://the-layna-company remains the legal entity",
+    "business-name://keddeh-systems remains the operating identity",
+    "one sector owns each mutation",
+    "canonical repo identity is preserved even while implementation is transitionally located elsewhere",
+    "handoff never claims target execution",
+    "target execution must return a receipt/readback before the next externally consequential mutation is promoted",
+    "failures become state and evidence; they are never rewritten as success",
+    "descendant work inherits lineage by reference rather than copying parent systems"
+  ],
+  "envelope": ["work_id","organisation_identity","operating_identity","intent","state","lineage","evidence","continuation","envelope_root"],
+  "primitive": "ADDRESS -> RESOLVE -> AUTHORIZE -> APPLY -> RECEIPT -> OBSERVE -> REWRITE",
+  "recursive_cycle": [
+    "receive immutable work envelope",
+    "verify envelope root",
+    "resolve current sector authority",
+    "locate existing implementation or declared transitional implementation",
+    "classify requested mutation",
+    "handoff only the required state/reference set",
+    "execute inside owning sector",
+    "append sector receipt and readback",
+    "rewrite envelope state",
+    "increment continuation epoch",
+    "resolve next sector from actual result",
+    "recurse"
+  ],
+  "process_chains": {
+    "PUBLIC_DOMAIN_SERVICE": ["LEGAL_GOVERNANCE","BRAINK","DOMAIN_AUTHORITY","SERVERS","NETWORK_FABRIC","CLOUD_INFRASTRUCTURE","SECURITY_AUTHORITY","WEB_FABRIC","EVIDENCE_LEDGER"],
+    "CUSTOMER_SERVICE_DELIVERY": ["LEGAL_GOVERNANCE","BRAINK","AGENTS_ORCHESTRATION","K_DRIVE","IL_LLM","EVIDENCE_LEDGER"],
+    "WORKBOOK_RUNTIME": ["LEGAL_GOVERNANCE","BRAINK","IL_LLM","WORKBOOK_OS","K_DRIVE","SERVERS","EVIDENCE_LEDGER"],
+    "SOFTWARE_RELEASE": ["LEGAL_GOVERNANCE","BRAINK","KEX","SECURITY_AUTHORITY","SERVERS","WEB_FABRIC","EVIDENCE_LEDGER"]
+  },
+  "anti_patterns": [
+    "copy the entire source sector into the target repo",
+    "create a new registry when a canonical identity already exists",
+    "promote a handoff manifest to proof of target execution",
+    "treat a missing named repo as a missing runtime when a declared transitional implementation exists",
+    "let BRAINK silently become owner of a downstream sector mutation",
+    "let a downstream sector rewrite the legal/business identity relationship",
+    "drop failed receipts during reconciliation"
+  ]
+}
