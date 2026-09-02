@@ -1,0 +1,42 @@
+{
+  "schema": "keddah.cross-sector-bound-execution.r1/v1",
+  "work_id": "WORK-CROSS-ADAPT-001",
+  "intent": "PUBLIC_DOMAIN_SERVICE",
+  "identity": {
+    "legal": "organisation://the-layna-company",
+    "operating": "business-name://keddeh-systems"
+  },
+  "executed": [
+    {
+      "sector": "LEGAL_GOVERNANCE",
+      "state": "READ_BACK",
+      "mechanic": "KEDDEH_LEGAL_IDENTITY_ADAPTER_R1",
+      "receipt_root": "3975ba5fd70df72f1cd857b93a97ad864b5725185eea5eac3321e64cd194677e"
+    },
+    {
+      "sector": "BRAINK",
+      "state": "READ_BACK",
+      "mechanic": "enterprise/foundry/operating_runtime.py:OperatingRuntime.register_domain",
+      "database_readback": ["cross-adapt-test.keddeh","KEDDEH_INTERNAL","DEFINED","KEDDEH_SYSTEMS"],
+      "operating_runtime_receipt_root": "bb473750521abee2a724e1181908ba42fd7a3f14066cdf886d93f4b5c6acf0cc",
+      "cross_sector_receipt_root": "ecac7d870c68ff6b3d37966a0da560723c1b0edc524470d37f40c3feda0a50de"
+    }
+  ],
+  "next_sector": {
+    "sector": "DOMAIN_AUTHORITY",
+    "state_at_test": "UNBOUND",
+    "canonical_repo": "aboudykeddeh276-stack/DOMAIN-AUTHORITY",
+    "transitional_execution_repo": "aboudykeddeh276-stack/SERVERS-KEDDEHSYSTEMS",
+    "resolution": "runtime/domain_authority/cross_sector_handler.py subsequently added to consume the same work envelope"
+  },
+  "checks": {
+    "same_work_id": true,
+    "legal_identity_preserved": true,
+    "operating_identity_preserved": true,
+    "legal_execution_read_back": true,
+    "braink_execution_read_back": true,
+    "braink_database_mutation_read_back": true,
+    "domain_authority_execution_not_faked": true,
+    "evidence_accumulated": true
+  }
+}
