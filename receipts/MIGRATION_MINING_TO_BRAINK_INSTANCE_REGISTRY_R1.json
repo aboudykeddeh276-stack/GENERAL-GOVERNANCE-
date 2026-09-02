@@ -1,0 +1,34 @@
+{
+  "migration_id": "MINING_TO_BRAINK_INSTANCE_REGISTRY_R1",
+  "source": {
+    "repository": "aboudykeddeh276-stack/MINING",
+    "path": "backend/braink_core.py",
+    "blob_sha": "a0d72fb189efb34ea68c96d338bd13c140607fa8"
+  },
+  "target": {
+    "repository": "aboudykeddeh276-stack/BRAINK",
+    "path": "runtime/instance_registry.py",
+    "commit": "d194b09156c20256da1c6088e9eeef0b8e663afd",
+    "readback_blob_sha": "0034fa81a2b0cd5b8c8990ff2cce7cdb3d206c7a"
+  },
+  "tests": {
+    "repository_path": "tests/test_instance_registry.py",
+    "commit": "5595b07609f7bdaa6d20b3a34d49da89c42bd1b9",
+    "local_result": "3/3 PASS"
+  },
+  "included_mechanics": [
+    "instance registration",
+    "directive application",
+    "restart accounting",
+    "canonical deterministic state export and SHA-256 state hash"
+  ],
+  "excluded_source_mechanics": [
+    "placeholder chat fallback",
+    "placeholder KEX-L lattice anchor",
+    "placeholder biological sync",
+    "unsubstantiated agent capability flags"
+  ],
+  "source_deletion": false,
+  "authority_switch": "BRAINK instance registry target established; MINING compatibility rewiring still required",
+  "next_transition": "rewire MINING callers to canonical BRAINK registry, run mining regression tests, then retire duplicate source functions only if readback remains equivalent"
+}
