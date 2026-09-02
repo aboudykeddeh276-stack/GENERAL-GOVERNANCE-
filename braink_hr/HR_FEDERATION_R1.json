@@ -1,0 +1,37 @@
+{
+  "schema": "keddeh.braink.hr-federation/v1",
+  "authority": "KEDDEH_SYSTEMS_HR + BRAINK",
+  "role": "cross-sector people/agent/capability/work-module governance",
+  "sector_repositories": {
+    "braink_core": "aboudykeddeh276-stack/BRAINK",
+    "hr_governance": "aboudykeddeh276-stack/GENERAL-GOVERNANCE-",
+    "runtime_servers": "aboudykeddeh276-stack/KERA_SERVER",
+    "storage_memory": "aboudykeddeh276-stack/virtualized-storage",
+    "research_learning_evolution": "aboudykeddeh276-stack/KSYSTEMS_LEARNING-",
+    "code_synthesis": "aboudykeddeh276-stack/K-SYSTEMS-CODE-SPACE-",
+    "mesh_nodes": "aboudykeddeh276-stack/KEDDEH_SOFTWARE_NODES",
+    "mining": "aboudykeddeh276-stack/MINING",
+    "console_ui": "aboudykeddeh276-stack/BRAINK-CONSOLE-PLUS"
+  },
+  "shared_work_module_law": [
+    "same work-module contract may be assigned to many agents in one or more sector groups",
+    "capability gaps become addressable HOLE states",
+    "resident capabilities are reused before synthesis",
+    "generated functions require requirement/test/provenance evidence",
+    "generator, verifier and promoter are segregated roles",
+    "execution receipts return to BRAINK federation state",
+    "observer evidence informs reconciliation but does not create execution permission"
+  ],
+  "required_hr_records": [
+    "agent identity",
+    "team identity",
+    "sector",
+    "roles",
+    "capabilities",
+    "authority scope",
+    "work-module assignments",
+    "verification role separation",
+    "promotion authority",
+    "revocation state"
+  ]
+}
