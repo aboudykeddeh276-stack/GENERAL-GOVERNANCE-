@@ -1,0 +1,97 @@
+{
+  "identifier": "class://keddeh/definition",
+  "version": "R1",
+  "classification": ["SEMANTIC_CLASS_CONTRACT"],
+  "primitive_basis": [
+    "primitive://identity",
+    "primitive://classification",
+    "primitive://relation",
+    "primitive://state",
+    "primitive://transition",
+    "primitive://boundary",
+    "primitive://proof"
+  ],
+  "properties": {
+    "stable_semantic_identity": {"required_value": true},
+    "versioned_mutation_only": {"required_value": true},
+    "inward_reducibility": {"required_value": true},
+    "outward_reconstructability": {"required_value": true},
+    "conformance_testability": {"required_value": true}
+  },
+  "invariants": [
+    "identifier_semantics_are_stable_within_version",
+    "semantic_mutation_requires_new_version",
+    "inward_traversal_terminates_at_declared_primitives",
+    "outward_validation_returns_to_original_definition",
+    "implementation_does_not_override_definition"
+  ],
+  "relationships": [
+    {"relation": "GOVERNS", "target": "class://keddeh/named-class", "constraint": "all canonical named classes satisfy Definition Contract R1"},
+    {"relation": "REDUCES_TO", "target": "primitive://semantic-basis", "constraint": "primitive_basis is explicit"},
+    {"relation": "VALIDATES", "target": "implementation://class-instance", "constraint": "proof conditions are observable"}
+  ],
+  "substrate_boundary": {
+    "inside": [
+      "semantic identity",
+      "class contract",
+      "allowed relationships",
+      "allowed transformations",
+      "proof requirements"
+    ],
+    "outside": [
+      "specific implementation language",
+      "specific storage medium",
+      "specific host process",
+      "agent-local reinterpretation"
+    ]
+  },
+  "executable_role": [
+    "resolve canonical class semantics",
+    "constrain permitted interpretation",
+    "drive inward primitive traversal",
+    "drive outward implementation validation",
+    "block silent semantic mutation"
+  ],
+  "traversal_rules": {
+    "inward": [
+      "surface_term",
+      "canonical_identifier",
+      "definition",
+      "relationships",
+      "allowed_transformations",
+      "runtime_role",
+      "substrate_boundary",
+      "primitive_basis"
+    ],
+    "outward": [
+      "primitive_basis",
+      "construction_rule",
+      "runtime_behavior",
+      "process",
+      "sector_function",
+      "public_capability",
+      "definition_conformance"
+    ]
+  },
+  "proof_conditions": [
+    "canonical_identifier_resolved",
+    "all_declared_primitives_evidenced",
+    "all_invariants_satisfied",
+    "substrate_boundary_respected",
+    "all_required_properties_observed",
+    "invalid_interpretations_absent",
+    "outward_trace_validates_back_to_definition"
+  ],
+  "invalid_interpretations": [
+    "definition_is_optional_documentation",
+    "agent_may_reinterpret_identifier_silently",
+    "implementation_may_redefine_class_semantics",
+    "industry_analogy_overrides_canonical_definition"
+  ],
+  "supersedes": null,
+  "evolution": {
+    "reason": "Initial canonical definition-of-definitions contract",
+    "evidence": ["user-defined inward/outward semantic validation method"],
+    "compatibility_impact": "Establishes stable semantic class boundary for future definitions"
+  }
+}
