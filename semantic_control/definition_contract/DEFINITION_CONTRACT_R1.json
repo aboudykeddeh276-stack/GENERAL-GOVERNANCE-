@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "keddah://semantic/definition-contract/r1",
+  "title": "KEDDEH Definition Contract R1",
+  "description": "Canonical meta-contract for named classes. Definitions are stable semantic identities and may only evolve through explicit versioned mutation.",
+  "type": "object",
+  "required": [
+    "identifier",
+    "version",
+    "classification",
+    "primitive_basis",
+    "properties",
+    "invariants",
+    "relationships",
+    "substrate_boundary",
+    "executable_role",
+    "traversal_rules",
+    "proof_conditions",
+    "invalid_interpretations"
+  ],
+  "properties": {
+    "identifier": {"type": "string", "minLength": 1},
+    "version": {"type": "string", "pattern": "^[A-Za-z0-9._-]+$"},
+    "classification": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+    "primitive_basis": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+    "properties": {"type": "object", "minProperties": 1, "additionalProperties": true},
+    "invariants": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+    "relationships": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["relation", "target"],
+        "properties": {
+          "relation": {"type": "string", "minLength": 1},
+          "target": {"type": "string", "minLength": 1},
+          "constraint": {"type": ["string", "null"]}
+        },
+        "additionalProperties": false
+      }
+    },
+    "substrate_boundary": {
+      "type": "object",
+      "required": ["inside", "outside"],
+      "properties": {
+        "inside": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "outside": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+      },
+      "additionalProperties": false
+    },
+    "executable_role": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+    "traversal_rules": {
+      "type": "object",
+      "required": ["inward", "outward"],
+      "properties": {
+        "inward": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "outward": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "proof_conditions": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+    "invalid_interpretations": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+    "supersedes": {"type": ["string", "null"]},
+    "evolution": {
+      "type": "object",
+      "properties": {
+        "reason": {"type": "string"},
+        "evidence": {"type": "array", "items": {"type": "string"}},
+        "compatibility_impact": {"type": "string"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "x-keddeh-agent-rule": [
+    "RESOLVE canonical identifier before interpretation",
+    "FREEZE definition semantics for the operation",
+    "REDUCE inward toward primitive_basis",
+    "TEST invariants and substrate boundary",
+    "IMPLEMENT only permitted transformations",
+    "VALIDATE observed implementation back to this definition",
+    "REJECT silent reinterpretation",
+    "VERSION any semantic mutation explicitly"
+  ]
+}
