@@ -1,0 +1,31 @@
+{
+  "schema": "keddah.systems.unification-control-package.r1",
+  "authority": "KEDDEH_SYSTEMS",
+  "package": "KEDDEH_SYSTEMS_UNIFICATION_CONTROL_R1.zip",
+  "package_sha256": "69af8ff49ae33043e6705307db5f42960e84da26aac1e96238a9d8704a0a2fba",
+  "package_root": "01b145dac483ae397e6e2a602b103c94a3a7b0282dd7965cd7a5a300a5ddedb7",
+  "controls": [
+    "00_KEDDEH_SYSTEMS_UNIFICATION_CONTROL_STANDARD_R1.md",
+    "01_RUNTIME_REGIME_R1.md",
+    "02_FILESYSTEM_GOVERNANCE_R1.md",
+    "03_NAMING_CONVENTIONS_R1.md",
+    "04_CONTROL_CONVENTIONS_R1.md",
+    "05_AGENT_ENGINEERING_PROTOCOL_R1.md",
+    "06_PROMOTION_AND_EVIDENCE_GATES_R1.md",
+    "07_TRANSITION_CLASS_PACKAGE_MATRIX_R1.json"
+  ],
+  "canonical_transition_sequence": [
+    "DEFINITION",
+    "RESOLUTION",
+    "ADDRESS",
+    "AUTHORITY",
+    "OBSERVE_PRE",
+    "TRANSITION",
+    "PERSIST",
+    "ACTUATE",
+    "OBSERVE_POST",
+    "RECEIPT",
+    "CONTINUE"
+  ],
+  "binding_rule": "Established named classes are stable semantic identities. Implementations must prove conformance to definitions; duplicate implementations may converge, definitions may not silently drift."
+}
