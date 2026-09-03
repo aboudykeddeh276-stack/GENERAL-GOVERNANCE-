@@ -1,0 +1,15 @@
+{
+  "schema": "keddah.systems.unification-control-matrix.r1",
+  "classes": [
+    {"class":"IL-LLM","role":"semantic_resolution","transition_stages":["DEFINITION","RESOLUTION"],"known_mechanics":["illlm_runtime_v2.py"],"must_not_be_reinterpreted_as":"generic knowledge graph"},
+    {"class":"KEX","role":"identity_address_transition_semantics","transition_stages":["ADDRESS","TRANSITION"],"known_mechanics":["kex_coordinate_plane_runtime.py"],"must_not_be_reinterpreted_as":"generic router"},
+    {"class":"BRAINK","role":"orchestration_supervision_continuation","transition_stages":["AUTHORITY","CONTINUE"],"known_mechanics":["recursive_computer_runtime_r26.py","continuation_runtime.py"],"must_not_be_reinterpreted_as":"generic agent framework"},
+    {"class":"Observer2","role":"situated_observation_learning_admission","transition_stages":["OBSERVE_PRE","OBSERVE_POST"],"known_mechanics":["observer2 environmental loop R29"],"must_not_be_reinterpreted_as":"logging"},
+    {"class":"VFS-KDRIVE","role":"persistent_logical_state","transition_stages":["PERSIST"],"known_mechanics":["substrate_adapters.py","SelfAddressingRuntime"],"must_not_be_reinterpreted_as":"physical disk replacement"},
+    {"class":"ToT-ORC","role":"routing_authority_accepted_state","transition_stages":["AUTHORITY","TRANSITION"],"known_mechanics":["tot_safety_kernel_R1.py"],"must_not_be_reinterpreted_as":"mere network diagram"},
+    {"class":"DurableTransition-R31","role":"recoverable_state_ledger_commit","transition_stages":["PERSIST","RECEIPT","RECOVER"],"known_mechanics":["state_ledger_atomicity_r31.py"],"must_not_be_reinterpreted_as":"replacement for all persistence"},
+    {"class":"SectorActuator","role":"owned_external_or_sector_mutation","transition_stages":["ACTUATE"],"known_mechanics":["domain/server/network/web/customer-specific actuators"],"must_not_be_reinterpreted_as":"manifest"},
+    {"class":"EvidenceLedger","role":"proof_lineage_conformance","transition_stages":["RECEIPT"],"known_mechanics":["append-only/proof ledgers"],"must_not_be_reinterpreted_as":"execution itself"}
+  ],
+  "canonical_transition_sequence":["DEFINITION","RESOLUTION","ADDRESS","AUTHORITY","OBSERVE_PRE","TRANSITION","PERSIST","ACTUATE","OBSERVE_POST","RECEIPT","CONTINUE"]
+}
