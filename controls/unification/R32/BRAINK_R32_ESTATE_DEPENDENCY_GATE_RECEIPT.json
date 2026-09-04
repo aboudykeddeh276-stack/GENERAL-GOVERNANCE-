@@ -1,0 +1,19 @@
+{
+  "schema": "keddah.estate-dependency-gate.r32.receipt/v1",
+  "graph_sha256": "7df09c1f5be619f39a90d32f6598b7a6aa32200d9778740903eb0b986619dd9d",
+  "binding_count": 7,
+  "expected_supporting_binding_count": 7,
+  "results": [
+    {"repository":"aboudykeddeh276-stack/SERVERS-KEDDEHSYSTEMS","authority_state":"ACTIVE_CANONICAL","binding_status":"DEPENDENCY_BOUND_ACTIVE_AUTHORITY","binding_sha256":"e61b3128925a8ce92070ac48e2435520dfcd9b20c643f75b91dd7665bf550e73","registered":true},
+    {"repository":"aboudykeddeh276-stack/kcloud-substrate","authority_state":"CANONICAL_CANDIDATE","binding_status":"DEPENDENCY_BOUND_NOT_AUTHORITY_PROMOTED","binding_sha256":"f936bd92c35f9b5c132cc0b7b419500245551b60f854815c814ee6ed762faa1d","registered":true},
+    {"repository":"aboudykeddeh276-stack/virtualized-storage","authority_state":"CANONICAL_CANDIDATE","binding_status":"DEPENDENCY_BOUND_NOT_AUTHORITY_PROMOTED","binding_sha256":"8b4f0fd0af6642d36dbd2a936506ae3cce00f10a4a9b07e3017458b81134d8ec","registered":true},
+    {"repository":"aboudykeddeh276-stack/VIRTUALISED_MEMORY","authority_state":"SUPPORTING_CANDIDATE","binding_status":"DEPENDENCY_BOUND_SUPPORTING_EVIDENCE","binding_sha256":"29c2bdb47b3144bebbd0e6514ff954e4c6b6c5e59a7c8fd7ce826fcffd742076","registered":true},
+    {"repository":"aboudykeddeh276-stack/KEDDEH_SOFTWARE_NODES","authority_state":"CANONICAL_CANDIDATE_FOR_NODE_MECHANICS","binding_status":"DEPENDENCY_BOUND_NOT_AUTHORITY_PROMOTED","binding_sha256":"a4eedd83656887aa92dabff22c30d9d72a8cd2fce69df073a3eccffb62bd412c","registered":true},
+    {"repository":"aboudykeddeh276-stack/KEDDEH-CLOUD-SERVERS-ID-1","authority_state":"SUPPORTING_MIXED","binding_status":"DEPENDENCY_BOUND_FUNCTIONS_ROUTED","binding_sha256":"12add26303bd3e80ebe5e1526f2f1d550272da6e67d2b251bd0422b3bf3120c3","registered":true},
+    {"repository":"aboudykeddeh276-stack/kex-braink-substrate","authority_state":"KEX_CANONICAL_CANDIDATE_PENDING_SPLIT","binding_status":"DEPENDENCY_BOUND_PENDING_AUTHORITY_SPLIT","binding_sha256":"3be393316da1034035d9ae4d50cd32562c3408898dcf9b02aab087730ed2e810","registered":true}
+  ],
+  "failures": [],
+  "status": "PASS_FAIL_CLOSED",
+  "promotion_authorized": false,
+  "authority_switch_authorized": false
+}
