@@ -1,0 +1,32 @@
+{
+  "schema": "keddah.estate-dependency-federation.r32/v1",
+  "governance_root": "aboudykeddeh276-stack/GENERAL-GOVERNANCE-@main",
+  "braink_authority": "aboudykeddeh276-stack/BRAINK@main",
+  "braink_reference_head": "d515bf43400a91f4921388c99d83977cb3f1f89a",
+  "process_dependencies": {
+    "resident_root_carrier_last": "BRAINK R28",
+    "physical_host_trust_binding": "BRAINK R24",
+    "durable_transition": "R31 GOVERNANCE CONTRACT; IMPLEMENTATION NOT PROMOTED BY R32"
+  },
+  "invariants": [
+    "CARRIER_IS_PROJECTION_NOT_IDENTITY",
+    "RESIDENT_ROOT_BEFORE_CARRIER_TRUST",
+    "STRUCTURAL_QUALIFICATION_NE_PHYSICAL_VERIFICATION",
+    "TRUST_BOUND_NE_PHYSICAL_VERIFIED",
+    "VFS_ROLE_RESOLVER_ONLY",
+    "ENCODED_MEDIUM_TO_CONTROLLER_TO_LOGICAL_OBJECTS_TO_VFS",
+    "EXTERNAL_CLAIM_REQUIRES_ACTUATION_AND_READBACK"
+  ],
+  "repositories": [
+    {"repo":"aboudykeddeh276-stack/BRAINK","role":"BRAINK_ORCHESTRATION_AUTHORITY","state":"ACTIVE_CANONICAL","depends_on":["GENERAL-GOVERNANCE- definitions/gates"]},
+    {"repo":"aboudykeddeh276-stack/SERVERS-KEDDEHSYSTEMS","role":"SERVER_RUNTIME","state":"ACTIVE_CANONICAL","depends_on":["BRAINK resident roots","BRAINK R24 host trust","KEX addressing","K-DRIVE persistence"]},
+    {"repo":"aboudykeddeh276-stack/kcloud-substrate","role":"CLOUD_INFRASTRUCTURE","state":"CANONICAL_CANDIDATE","depends_on":["SERVER_RUNTIME","K-DRIVE","BRAINK R24 physical host qualification","external allocation/readback"]},
+    {"repo":"aboudykeddeh276-stack/virtualized-storage","role":"K_DRIVE_STORAGE","state":"CANONICAL_CANDIDATE","depends_on":["KEX address geometry/controller semantics","VIRTUALISED_MEMORY comparison","R31 durable transition contract"]},
+    {"repo":"aboudykeddeh276-stack/VIRTUALISED_MEMORY","role":"K_DRIVE_STORAGE_SUPPORT","state":"SUPPORTING_CANDIDATE","depends_on":["virtualized-storage authority comparison","BRAINK evidence lineage"]},
+    {"repo":"aboudykeddeh276-stack/KEDDEH_SOFTWARE_NODES","role":"EDGE_IOT_NETWORK_NODE_CARRIER","state":"CANONICAL_CANDIDATE","depends_on":["BRAINK R28 carrier-last identity","BRAINK R24 host trust","SERVER_RUNTIME"]},
+    {"repo":"aboudykeddeh276-stack/KEDDEH-CLOUD-SERVERS-ID-1","role":"CLOUD_SERVER_STORAGE_SUPPORT","state":"SUPPORTING_MIXED","depends_on":["kcloud-substrate","SERVERS-KEDDEHSYSTEMS","virtualized-storage"]},
+    {"repo":"aboudykeddeh276-stack/kex-braink-substrate","role":"KEX_BRAINK_SHARED_SUBSTRATE","state":"KEX_CANONICAL_CANDIDATE_PENDING_SPLIT","depends_on":["BRAINK orchestration boundary","GENERAL-GOVERNANCE- class definitions"]}
+  ],
+  "promotion_rule": "COPY_BIND -> HASH -> TEST -> NEGATIVE_TEST -> FAILURE_INJECTION -> PERSIST_READBACK -> DESCENDANT_CHECK -> INDEPENDENT_EXECUTION -> EXTERNAL_ACTUATION_READBACK_IF_MATERIAL -> AUTHORITY_SWITCH",
+  "r32_action": "DEPENDENCIES_BOUND; NO DESTRUCTIVE MIGRATION OR AUTHORITY SWITCH IMPLIED"
+}
