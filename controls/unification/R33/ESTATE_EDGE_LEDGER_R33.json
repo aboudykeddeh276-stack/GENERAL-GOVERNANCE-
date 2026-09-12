@@ -1,0 +1,58 @@
+{
+  "schema": "keddeh.estate-edge-ledger.r33/v1",
+  "governance_root": "aboudykeddeh276-stack/GENERAL-GOVERNANCE-",
+  "authority_switch_authorized": false,
+  "node_execution_law": "EXECUTABLE_WORK_IS_NODE_OR_NODE_TRANSITION",
+  "legacy_projection_law": "QUEUE_RECEIPT_MANIFEST_UI_MAY_INDEX_NODE_BUT_DO_NOT_REPLACE_NODE_AUTHORITY",
+  "edges": [
+    {
+      "edge_id": "EDGE-R33-001",
+      "source": "BRAINK runtime/agents/BRAINK_PUBLIC_SERVICE_AGENT_ORCHESTRATOR.py",
+      "target": "BRAINK/KEDDEH_SOFTWARE_NODES node fabric",
+      "relation": "PROCESS_DISPATCH_TO_NODE_TRANSITION",
+      "observed_state": "DECLARED_NOT_EXECUTION_BOUND",
+      "evidence": ["BRAINK public-service agent fabric defines actions/handoffs/proof gates", "orchestrator returns STATE_DISPATCHED receipt"],
+      "required_amendment": "materialize dispatch as node transition preserving process identity and authority"
+    },
+    {
+      "edge_id": "EDGE-R33-002",
+      "source": "BRAINK runtime/network/braink_network_intent.py",
+      "target": "node fabric",
+      "relation": "COMPILED_INTENT_TO_NODE",
+      "observed_state": "COMPILED_DESCRIPTOR_ONLY",
+      "required_amendment": "map semantic_root/causal_id/capability/authority into node transition envelope"
+    },
+    {
+      "edge_id": "EDGE-R33-003",
+      "source": "BRAINK runtime/host_control/braink_host_fabric.py queue_work",
+      "target": "admitted host/node fabric",
+      "relation": "PERSISTED_WORK_INDEX_TO_NODE_STATE",
+      "observed_state": "QUEUED_INDEX_PRESENT_CONSUMER_UNPROVEN",
+      "required_amendment": "queue row references node identity; node remains executable authority"
+    },
+    {
+      "edge_id": "EDGE-R33-004",
+      "source": "BRAINK enterprise/market_services/sector_binding_runtime.py adapter_queue",
+      "target": "KEDDEH_SOFTWARE_NODES capability supervisor nodes",
+      "relation": "CAPABILITY_GAP_TO_SUPERVISOR_NODE",
+      "observed_state": "BOTH_ENDPOINTS_PRESENT_BINDING_UNPROVEN",
+      "required_amendment": "bind adapter obligation identity to existing capability supervisor node"
+    },
+    {
+      "edge_id": "EDGE-R33-005",
+      "source": "KEDDEH_SOFTWARE_NODES MANIFEST.json",
+      "target": "current repository mechanics",
+      "relation": "MANIFEST_REPRESENTS_REPOSITORY",
+      "observed_state": "STALE_LEGACY_UI_MANIFEST",
+      "required_amendment": "preserve legacy manifest; add current-state manifest with provenance split"
+    },
+    {
+      "edge_id": "EDGE-R33-006",
+      "source": "KEDDEH_SOFTWARE_NODES WORKLOAD_REGISTER.md",
+      "target": "runtime completion claims",
+      "relation": "ARTIFACT_COMPLETION_TO_EXECUTION_COMPLETION",
+      "observed_state": "INVALID_IF_PROMOTED",
+      "required_amendment": "retain historical artifact completion but add execution-state ledger"
+    }
+  ]
+}
