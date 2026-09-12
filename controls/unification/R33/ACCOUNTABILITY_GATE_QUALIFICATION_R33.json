@@ -1,0 +1,38 @@
+{
+  "schema": "keddeh.accountability-gate.qualification.r33.v1",
+  "branch": "repair/estate-edge-recovery-r33",
+  "authority": "repo://GENERAL-GOVERNANCE-/estate-governance",
+  "implementation": "controls/unification/R33/accountability_admission_gate_r33.py",
+  "tests": "controls/unification/R33/test_accountability_admission_gate_r33.py",
+  "source_readback": {
+    "implementation_git_blob_sha1": "205fdf40772856bc06255a005b1a94eb7561caff",
+    "tests_git_blob_sha1": "b1c38711d0b10286435ad52f31ddb2af8f54d920",
+    "local_reconstruction_blob_matches_repository": true
+  },
+  "execution": {
+    "python_compile": "PASS",
+    "unittest": "PASS",
+    "tests_run": 13,
+    "tests_failed": 0
+  },
+  "qualified_predicates": [
+    "search-before-synthesis gate executable",
+    "partial no-result is not absence",
+    "working synthesized replacement denied without explicit real-path parity transfer",
+    "derived/projection/carrier/queue roles cannot silently become source authority",
+    "simulation cannot promote local execution",
+    "loopback HTTP cannot promote public HTTP",
+    "GitHub runner state cannot describe BRAINK/KEX runtime state",
+    "workbook ISP intent cannot promote public BGP execution",
+    "private DA readback cannot promote parent/public delegation",
+    "cross-domain mutation requires existing binding and bilateral authority",
+    "bounded node edge binding may claim EDGE_BOUND only with binding readback"
+  ],
+  "not_claimed": [
+    "BRAINK integration",
+    "server carrier integration",
+    "host deployment",
+    "public deployment",
+    "production qualification"
+  ]
+}
