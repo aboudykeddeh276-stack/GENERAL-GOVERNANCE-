@@ -1,0 +1,230 @@
+{
+  "schema": "keddah.logical-root-implementation-surface-register.r32/v1",
+  "governance_root": "aboudykeddeh276-stack/GENERAL-GOVERNANCE-@main",
+  "architectural_binding": "controls/unification/R32/02_ARCHITECTURAL_INTENT_BINDING_R32.md",
+  "governing_relation": "IDENTITY != IMPLEMENTATION != CARRIER != EXECUTION != EVIDENCE",
+  "status_semantics": {
+    "ACTIVE_CANONICAL": "current sector authority established by estate governance",
+    "CANONICAL_CANDIDATE": "strong current carrier pending required promotion gates",
+    "SUPPORTING": "valid implementation/projection/evidence surface without root authority",
+    "AWAITING_CANONICAL_REPOSITORY_PROVISIONING": "logical sector declared but named canonical repository not currently established",
+    "AUTHORITY_UNRESOLVED": "mechanics exist or are expected but current evidence does not establish a unique authority",
+    "QUARANTINE_DISCOVERY": "material exists but ownership/authority is unresolved"
+  },
+  "logical_roots": [
+    {
+      "id": "BRAINK",
+      "class": "runtime_orchestration_root",
+      "canonical_repository": "aboudykeddeh276-stack/BRAINK",
+      "authority_state": "ACTIVE_CANONICAL",
+      "observed_surfaces": [
+        "aboudykeddeh276-stack/BRAINK",
+        "aboudykeddeh276-stack/Braink-Beta",
+        "aboudykeddeh276-stack/BRAINK-CONSOLE-PLUS",
+        "aboudykeddeh276-stack/BRAINK_DESKTOP_ORGANISED",
+        "aboudykeddeh276-stack/kex-braink-substrate"
+      ],
+      "owned_mechanics": [
+        "orchestration",
+        "Observer2 state/proof mechanics",
+        "resident-root coordination",
+        "continuation",
+        "BRAINK-specific HCI/runtime contracts"
+      ],
+      "must_not_absorb": [
+        "KEX coordinate/address authority",
+        "K-DRIVE physical persistence authority",
+        "projection-only HCI authority"
+      ],
+      "evidence_state": "STATIC_REPOSITORY_AND_GOVERNANCE_EVIDENCE_ONLY"
+    },
+    {
+      "id": "KEX",
+      "class": "machine_execution_root",
+      "desired_repository": "aboudykeddeh276-stack/KEX",
+      "authority_state": "AWAITING_CANONICAL_REPOSITORY_PROVISIONING",
+      "candidate_repository": "aboudykeddeh276-stack/kex-braink-substrate",
+      "observed_surfaces": [
+        "aboudykeddeh276-stack/kex-braink-substrate",
+        "aboudykeddeh276-stack/KEDDEH-ALGEBRA-CORES",
+        "aboudykeddeh276-stack/UNIVERSAL-CALIBRATION-MATRIX",
+        "aboudykeddeh276-stack/1AXIS-MATRIX-OS",
+        "aboudykeddeh276-stack/KEX_HYPERDRIVE_DASHBOARD_UI"
+      ],
+      "owned_mechanics": [
+        "identity semantics",
+        "coordinate/address resolution",
+        "execution/transition semantics",
+        "state-transfer/routing identity",
+        "machine mechanics"
+      ],
+      "projection_surfaces": [
+        "aboudykeddeh276-stack/KEX_HYPERDRIVE_DASHBOARD_UI"
+      ],
+      "evidence_state": "CANDIDATE_MECHANICS_LOCATED_AUTHORITY_SPLIT_PENDING"
+    },
+    {
+      "id": "DATA",
+      "class": "canonical_typed_information_root",
+      "authority_state": "AUTHORITY_UNRESOLVED",
+      "canonical_repository": null,
+      "owned_mechanics": [
+        "canonical types",
+        "schema-bound payload identity",
+        "data-class semantics"
+      ],
+      "must_not_be_inferred_from": [
+        "workbook carrier",
+        "database row",
+        "manifest label",
+        "VFS path"
+      ],
+      "evidence_state": "LOGICAL_CLASS_DEFINED_IMPLEMENTATION_ROOT_NOT_YET_ISOLATED"
+    },
+    {
+      "id": "IL-LLM",
+      "class": "semantic_runtime_root",
+      "desired_repository": "aboudykeddeh276-stack/IL-LLM",
+      "authority_state": "AWAITING_CANONICAL_REPOSITORY_PROVISIONING",
+      "candidate_surfaces": [
+        "aboudykeddeh276-stack/KSYSTEMS_LEARNING-"
+      ],
+      "owned_mechanics": [
+        "semantic resolution",
+        "ontology",
+        "relation traversal",
+        "class resolution",
+        "code-list/data interpretation",
+        "multilingual semantic addressability",
+        "workbook semantic mechanics"
+      ],
+      "evidence_state": "LOGICAL_SECTOR_DECLARED_CANDIDATE_CARRIER_UNRESOLVED"
+    },
+    {
+      "id": "NODE",
+      "class": "identity_and_lifecycle_root",
+      "authority_state": "AUTHORITY_UNRESOLVED",
+      "canonical_repository": null,
+      "candidate_surfaces": [
+        "aboudykeddeh276-stack/KEDDEH_SOFTWARE_NODES",
+        "aboudykeddeh276-stack/BRAINK"
+      ],
+      "owned_mechanics": [
+        "node identity",
+        "promotion stage",
+        "capability binding",
+        "runtime health state"
+      ],
+      "boundary": "KEDDEH_SOFTWARE_NODES is currently classified as EDGE-IOT/NETWORK-FABRIC candidate; this register does not silently promote it to generic NODE root authority.",
+      "evidence_state": "NODE_MECHANICS_PRESENT_OR_REFERENCED_ROOT_AUTHORITY_NOT_ISOLATED"
+    },
+    {
+      "id": "VFS",
+      "class": "namespace_and_resolver_root",
+      "authority_state": "SUPPORTING",
+      "current_host_authority": "aboudykeddeh276-stack/BRAINK",
+      "owned_mechanics": [
+        "logical namespace",
+        "logical-to-carrier resolution"
+      ],
+      "prohibited_authority": [
+        "storage medium",
+        "capacity authority",
+        "physical persistence proof"
+      ],
+      "storage_dependency": "K-DRIVE",
+      "evidence_state": "ROLE_BOUND_BY_R32_NO_SEPARATE_CANONICAL_REPOSITORY_DECLARED"
+    },
+    {
+      "id": "MESH",
+      "class": "distributed_membership_and_network_relation_root",
+      "desired_repository": "aboudykeddeh276-stack/NETWORK-FABRIC",
+      "authority_state": "AWAITING_CANONICAL_REPOSITORY_PROVISIONING",
+      "candidate_surfaces": [
+        "aboudykeddeh276-stack/KEDDEH_SOFTWARE_NODES",
+        "aboudykeddeh276-stack/MINING"
+      ],
+      "owned_mechanics": [
+        "peer membership",
+        "mesh routing",
+        "distributed network relationships",
+        "replication/consensus transport where implemented"
+      ],
+      "boundary": "mesh membership does not establish local state authority or physical-host verification",
+      "evidence_state": "NETWORK_FABRIC_CANONICAL_REPOSITORY_MISSING_EXTRACTION_REQUIRED"
+    },
+    {
+      "id": "K-DRIVE",
+      "class": "storage_persistence_root",
+      "desired_repository": "aboudykeddeh276-stack/K-DRIVE",
+      "authority_state": "AWAITING_CANONICAL_REPOSITORY_PROVISIONING",
+      "candidate_surfaces": [
+        "aboudykeddeh276-stack/virtualized-storage",
+        "aboudykeddeh276-stack/VIRTUALISED_MEMORY"
+      ],
+      "owned_mechanics": [
+        "encoded medium",
+        "storage controller",
+        "logical storage objects",
+        "persistence/readback mechanics"
+      ],
+      "must_not_absorb": [
+        "VFS identity semantics"
+      ],
+      "evidence_state": "CANONICAL_CANDIDATE_CARRIERS_REQUIRE_COMPARISON_AND_PROMOTION"
+    },
+    {
+      "id": "WORKBOOK-OS",
+      "class": "workbook_native_execution_root",
+      "desired_repository": "aboudykeddeh276-stack/WORKBOOK-OS",
+      "authority_state": "AWAITING_CANONICAL_REPOSITORY_PROVISIONING",
+      "candidate_surfaces": [
+        "aboudykeddeh276-stack/1AXIS-MATRIX-OS"
+      ],
+      "owned_mechanics": [
+        "workbook-native execution",
+        "scheduler",
+        "ledgers",
+        "sheet/runtime bindings"
+      ],
+      "boundary": "workbook files are carriers; evaluation authority belongs to the runtime/evaluator",
+      "evidence_state": "LEGACY_CARRIER_OBSERVED_CANONICAL_ROOT_MISSING"
+    },
+    {
+      "id": "EVIDENCE-LEDGER",
+      "class": "evidence_root",
+      "desired_repository": "aboudykeddeh276-stack/EVIDENCE-LEDGER",
+      "authority_state": "AWAITING_CANONICAL_REPOSITORY_PROVISIONING",
+      "owned_mechanics": [
+        "qualification receipts",
+        "benchmark evidence",
+        "conformance reports",
+        "transition lineage"
+      ],
+      "boundary": "evidence proves only the observed property and cannot substitute for the owning runtime",
+      "evidence_state": "LOGICAL_SECTOR_DECLARED_CANONICAL_REPOSITORY_MISSING"
+    }
+  ],
+  "observed_implementation_surfaces": [
+    {
+      "repository": "aboudykeddeh276-stack/kex-braink-substrate",
+      "surface_type": "shared_runtime_carrier",
+      "state": "KEX_CANONICAL_CANDIDATE_PENDING_SPLIT",
+      "observed_mechanic": "runtime/kex_machine_r16.py provides block-addressed sparse-machine mechanics, fsync-backed writes, resident BRAINK root installation, object hashing and read verification"
+    },
+    {
+      "repository": "aboudykeddeh276-stack/KEX_HYPERDRIVE_DASHBOARD_UI",
+      "surface_type": "projection_hci",
+      "state": "SUPPORTING",
+      "authority_exclusion": "does not establish KEX kernel or storage authority"
+    },
+    {
+      "repository": "aboudykeddeh276-stack/BRAINK-CONSOLE-PLUS",
+      "surface_type": "projection_hci",
+      "state": "SUPPORTING",
+      "authority_exclusion": "does not duplicate BRAINK core authority"
+    }
+  ],
+  "promotion_rule": "COPY_BIND -> HASH -> TEST -> NEGATIVE_TEST -> FAILURE_INJECTION -> PERSIST_READBACK -> DESCENDANT_CHECK -> INDEPENDENT_EXECUTION -> EXTERNAL_ACTUATION_READBACK_IF_MATERIAL -> AUTHORITY_SWITCH -> OPTIONAL_RETIREMENT",
+  "current_closure": "STATIC_ESTATE_BINDING_ONLY_NO_RUNTIME_OR_PHYSICAL_EXECUTION_PROMOTION_PERFORMED"
+}
