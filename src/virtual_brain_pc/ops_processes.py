@@ -18,6 +18,20 @@ from .zero_classifier import (
     CALL_ZERO_CLASSIFY,
     CALL_ZERO_RELATION_RESOLVE,
 )
+from .naming_protocol import (
+    FUNCTION_NAMING_PROTOCOL_EXECUTE_SYSTEM_WIDE_IDENTIFIER_SWEEP_AND_EMIT_PROOF_RECORD,
+)
+from .iterative_resolution_engine import (
+    FUNCTION_ITERATIVE_RESOLUTION_ENGINE_EXECUTE_BUILT_IN_SELF_TEST_WITH_CONTROLLED_SCENARIO,
+)
+from .agent_directive_dispatcher import (
+    FUNCTION_AGENT_DIRECTIVE_DISPATCHER_BUILD_STANDARD_DIRECTIVE_ASSIGNMENTS_FOR_ALL_SEVEN_AGENTS,
+    FUNCTION_AGENT_DIRECTIVE_DISPATCHER_EXECUTE_ALL_AGENT_DIRECTIVES_IN_SEQUENCE,
+)
+from .automation_protocol import (
+    FUNCTION_AUTOMATION_PROTOCOL_EXECUTE_COMPLETE_GOVERNANCE_CYCLE,
+    FUNCTION_AUTOMATION_PROTOCOL_SERIALIZE_GOVERNANCE_CYCLE_RESULT_TO_DICT,
+)
 
 # ---------------------------------------------------------------------------
 # OPS PROCESS REGISTRY
@@ -251,6 +265,94 @@ def _proc_registry_check(tick_id: int = 0) -> Dict[str, Any]:
 
 
 # ---------------------------------------------------------------------------
+# Process 9 — NAMING_PROTOCOL_VALIDATION_SWEEP
+# Sweeps all known governance identifiers through the strict naming protocol,
+# validates every name carries an unambiguous governance prefix, and emits
+# a proof record.
+# ---------------------------------------------------------------------------
+def _proc_naming_protocol_sweep(tick_id: int = 0) -> Dict[str, Any]:
+    result = FUNCTION_NAMING_PROTOCOL_EXECUTE_SYSTEM_WIDE_IDENTIFIER_SWEEP_AND_EMIT_PROOF_RECORD()
+    return {
+        "process_id": "NAMING_PROTOCOL_VALIDATION_SWEEP",
+        "tick_id": tick_id,
+        "sweep_state": result["state"],
+        "total_identifiers": result["total_identifiers_validated"],
+        "compliant_count": result["compliant_identifier_count"],
+        "non_compliant_count": result["non_compliant_identifier_count"],
+        "aggregate_proof_hash": result["aggregate_proof_hash"],
+        "proof_gate": result["proof_gate"],
+        "ok": result["state"] == "STATE_COMPLETED",
+    }
+
+
+# ---------------------------------------------------------------------------
+# Process 10 — ITERATIVE_RESOLUTION_ENGINE_SELF_TEST
+# Runs the built-in self-test of the iterative resolution engine using a
+# controlled three-step scenario. All steps always pass in the self-test.
+# ---------------------------------------------------------------------------
+def _proc_iterative_resolution_self_test(tick_id: int = 0) -> Dict[str, Any]:
+    result = (
+        FUNCTION_ITERATIVE_RESOLUTION_ENGINE_EXECUTE_BUILT_IN_SELF_TEST_WITH_CONTROLLED_SCENARIO()
+    )
+    return {
+        "process_id": "ITERATIVE_RESOLUTION_ENGINE_SELF_TEST",
+        "tick_id": tick_id,
+        "test_passed": result["test_passed"],
+        "protocol_state": result["protocol_state"],
+        "total_steps_executed": result["total_steps_executed"],
+        "total_steps_passed": result["total_steps_passed"],
+        "total_steps_failed": result["total_steps_failed"],
+        "tiers_used": result["tiers_used"],
+        "aggregate_proof_hash": result["aggregate_proof_hash"],
+        "ok": result["ok"],
+    }
+
+
+# ---------------------------------------------------------------------------
+# Process 11 — AGENT_DIRECTIVE_DISPATCHER_FULL_SWEEP
+# Dispatches directives to all seven named agent execution units in sequence,
+# verifies each returns ok=True, and records failover activation count.
+# ---------------------------------------------------------------------------
+def _proc_agent_directive_sweep(tick_id: int = 0) -> Dict[str, Any]:
+    assignments = (
+        FUNCTION_AGENT_DIRECTIVE_DISPATCHER_BUILD_STANDARD_DIRECTIVE_ASSIGNMENTS_FOR_ALL_SEVEN_AGENTS(
+            target_platform="linux"
+        )
+    )
+    dispatch_result = FUNCTION_AGENT_DIRECTIVE_DISPATCHER_EXECUTE_ALL_AGENT_DIRECTIVES_IN_SEQUENCE(
+        assignments
+    )
+    return {
+        "process_id": "AGENT_DIRECTIVE_DISPATCHER_FULL_SWEEP",
+        "tick_id": tick_id,
+        "total_dispatched": dispatch_result.total_directives_dispatched,
+        "total_completed": dispatch_result.total_directives_completed,
+        "total_failed": dispatch_result.total_directives_failed,
+        "failover_activations": dispatch_result.total_failover_activations,
+        "aggregate_proof_hash": dispatch_result.aggregate_proof_hash,
+        "proof_gate": dispatch_result.proof_gate,
+        "ok": dispatch_result.all_directives_completed,
+    }
+
+
+# ---------------------------------------------------------------------------
+# Process 12 — AUTOMATION_PROTOCOL_COMPLETE_GOVERNANCE_CYCLE
+# Executes the full automation protocol governance cycle: naming validation,
+# agent dispatch, iterative resolution self-test, and learning feedback.
+# ---------------------------------------------------------------------------
+def _proc_automation_protocol_cycle(tick_id: int = 0) -> Dict[str, Any]:
+    cycle_result = FUNCTION_AUTOMATION_PROTOCOL_EXECUTE_COMPLETE_GOVERNANCE_CYCLE(
+        tick_id=tick_id,
+        target_platform="linux",
+    )
+    serialised = FUNCTION_AUTOMATION_PROTOCOL_SERIALIZE_GOVERNANCE_CYCLE_RESULT_TO_DICT(
+        cycle_result
+    )
+    serialised["process_id"] = "AUTOMATION_PROTOCOL_COMPLETE_GOVERNANCE_CYCLE"
+    return serialised
+
+
+# ---------------------------------------------------------------------------
 # Process catalogue — ordered execution sequence
 # ---------------------------------------------------------------------------
 PROCESS_CATALOGUE: List[OpsProcess] = [
@@ -317,6 +419,38 @@ PROCESS_CATALOGUE: List[OpsProcess] = [
         version="v1.6",
         description="Verify all 39 BRAINK registry call blocks are present — no missing bootloaders.",
         run=_proc_registry_check,
+    ),
+    OpsProcess(
+        process_id="NAMING_PROTOCOL_VALIDATION_SWEEP",
+        title="Strict Naming Protocol System-Wide Validation Sweep",
+        lane="NAMING_PROTOCOL",
+        version="v1.0",
+        description="Sweep all governance identifiers through the naming protocol and emit proof record.",
+        run=_proc_naming_protocol_sweep,
+    ),
+    OpsProcess(
+        process_id="ITERATIVE_RESOLUTION_ENGINE_SELF_TEST",
+        title="Iterative Resolution Engine Built-In Self-Test",
+        lane="ITERATIVE_RESOLUTION",
+        version="v1.0",
+        description="Self-test the three-tier iterative resolution engine with a controlled scenario.",
+        run=_proc_iterative_resolution_self_test,
+    ),
+    OpsProcess(
+        process_id="AGENT_DIRECTIVE_DISPATCHER_FULL_SWEEP",
+        title="Agent Directive Dispatcher Full Seven-Agent Sweep",
+        lane="AGENT_DISPATCHER",
+        version="v1.0",
+        description="Dispatch directives to all seven named agent execution units and collect results.",
+        run=_proc_agent_directive_sweep,
+    ),
+    OpsProcess(
+        process_id="AUTOMATION_PROTOCOL_COMPLETE_GOVERNANCE_CYCLE",
+        title="Automation Protocol Complete Governance Cycle",
+        lane="AUTOMATION_PROTOCOL",
+        version="v1.0",
+        description="Execute the full automation protocol governance cycle across all subsystems.",
+        run=_proc_automation_protocol_cycle,
     ),
 ]
 

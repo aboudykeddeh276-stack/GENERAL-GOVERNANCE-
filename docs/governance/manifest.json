@@ -9,9 +9,14 @@
     "sha256": "2a0d6defd4718936f78365963d24428b2ac932ba377355850aa5f33fabe6cd1b",
     "state": "STATE_MODEL_LOCAL"
   },
+  "ARTIFACT_DOCS_GOVERNANCE_AUTOMATION_PROTOCOL_STANDARD_MD": {
+    "path": "docs/governance/automation-protocol-standard.md",
+    "sha256": "b97e9340ae23059ea3e37b95ed28521e177fb0d418c5e744090d2e69c94d4e31",
+    "state": "STATE_MODEL_LOCAL"
+  },
   "ARTIFACT_DOCS_GOVERNANCE_MANIFEST_JSON": {
     "path": "docs/governance/manifest.json",
-    "sha256": "3ee21e3686fd71be659ae43107db4573ada5fa4d019a58adc1eb2ac7aa03ad54",
+    "sha256": "f671f52974ce77ca3beef72974e53bef5affa14ef7dd6942069a6c13a563a2c4",
     "state": "STATE_MODEL_LOCAL"
   },
   "ARTIFACT_DOCS_GOVERNANCE_REPOSITORY_GOVERNANCE_STANDARD_MD": {
@@ -31,12 +36,32 @@
   },
   "ARTIFACT_README_MD": {
     "path": "README.md",
-    "sha256": "3430e9f9d25362bb1f1d5d7128eb558fa5796aca1d0fb159704fb987943eef12",
+    "sha256": "0a5feca34839906dcbbbfcc4f432ab8b9f262133d433148241d048a138ff0a40",
     "state": "STATE_MODEL_LOCAL"
   },
   "ARTIFACT_SCRIPTS_VALIDATE_GOVERNANCE_PY": {
     "path": "scripts/validate-governance.py",
-    "sha256": "f1f88729704d15a97bf231f3031c65a2bf09cd173819c766bac50fe04abbef23",
+    "sha256": "c421f4f94603c2391d6e2203d306bf8948906c822734b3000263745b7f83d1c5",
+    "state": "STATE_MODEL_LOCAL"
+  },
+  "ARTIFACT_SRC_VIRTUAL_BRAIN_PC_AGENT_DIRECTIVE_DISPATCHER_PY": {
+    "path": "src/virtual_brain_pc/agent_directive_dispatcher.py",
+    "sha256": "58f656eb4dc387e900eeb4dd35c37ac257f2618c3fd8f568163e3f8ea8229fe2",
+    "state": "STATE_MODEL_LOCAL"
+  },
+  "ARTIFACT_SRC_VIRTUAL_BRAIN_PC_AUTOMATION_PROTOCOL_PY": {
+    "path": "src/virtual_brain_pc/automation_protocol.py",
+    "sha256": "81dcff6f64e0884d98532cc801f47d4565f5d518eed978e6bd852ebe54cce2e2",
+    "state": "STATE_MODEL_LOCAL"
+  },
+  "ARTIFACT_SRC_VIRTUAL_BRAIN_PC_ITERATIVE_RESOLUTION_ENGINE_PY": {
+    "path": "src/virtual_brain_pc/iterative_resolution_engine.py",
+    "sha256": "4972cc1c8a6979dd72eb33773df40d6e6e719d67dfa165d001fb2ce74ae87fb0",
+    "state": "STATE_MODEL_LOCAL"
+  },
+  "ARTIFACT_SRC_VIRTUAL_BRAIN_PC_NAMING_PROTOCOL_PY": {
+    "path": "src/virtual_brain_pc/naming_protocol.py",
+    "sha256": "96a50d702944762a6fc4160bf40966949dabf551ed38e272b500701a2c3d251b",
     "state": "STATE_MODEL_LOCAL"
   }
 }

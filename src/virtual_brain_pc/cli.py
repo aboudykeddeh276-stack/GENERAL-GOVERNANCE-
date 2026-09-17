@@ -13,6 +13,10 @@ from .registry import REGISTRY_BLOCKS
 from .braink_runtime import run_full_braink_lane
 from .organism import run_organism_process
 from .spike_calibration import run_spike_boundary_calibration
+from .automation_protocol import (
+    FUNCTION_AUTOMATION_PROTOCOL_EXECUTE_COMPLETE_GOVERNANCE_CYCLE,
+    FUNCTION_AUTOMATION_PROTOCOL_SERIALIZE_GOVERNANCE_CYCLE_RESULT_TO_DICT,
+)
 
 
 def _run_virtual_machine(cycles: int) -> dict:
@@ -112,6 +116,14 @@ def _spike_calibrate(
     )
 
 
+def _automation_protocol_run(tick_id: int, target_platform: str) -> dict:
+    cycle_result = FUNCTION_AUTOMATION_PROTOCOL_EXECUTE_COMPLETE_GOVERNANCE_CYCLE(
+        tick_id=tick_id,
+        target_platform=target_platform,
+    )
+    return FUNCTION_AUTOMATION_PROTOCOL_SERIALIZE_GOVERNANCE_CYCLE_RESULT_TO_DICT(cycle_result)
+
+
 def parse_args(argv: List[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Virtual Brain PC CLI")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -164,6 +176,17 @@ def parse_args(argv: List[str] | None = None) -> argparse.Namespace:
 
     sub.add_parser("registry", help="Print BRAINK registry blocks")
 
+    automation_cmd = sub.add_parser(
+        "automation-protocol-run",
+        help="Run the full automation protocol governance cycle",
+    )
+    automation_cmd.add_argument("--tick-id", type=int, default=0)
+    automation_cmd.add_argument(
+        "--target-platform",
+        default="linux",
+        choices=["linux", "windows", "macos"],
+    )
+
     _BRAINK_KINDS = [
         "temperature", "voltage", "current", "pressure",
         "stress", "strain", "memory_load", "cpu_load",
@@ -215,6 +238,11 @@ def main(argv: List[str] | None = None) -> int:
         )
     elif args.command == "registry":
         result = _registry()
+    elif args.command == "automation-protocol-run":
+        result = _automation_protocol_run(
+            tick_id=args.tick_id,
+            target_platform=args.target_platform,
+        )
     elif args.command == "spike-calibrate":
         result = _spike_calibrate(
             spike_kind=args.spike_kind,

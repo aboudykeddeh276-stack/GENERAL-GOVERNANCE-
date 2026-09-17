@@ -34,12 +34,15 @@ jobs:
           python-version: "3.12"
 
       - name: Install package and dependencies
-        run: python -m pip install -e .
+        run: python -m pip install -e ".[dev]"
 
       - name: Run tests
         run: python -m pytest -q
 
-      - name: Verify ops-run (all 8 lanes)
+      - name: Validate automation protocol
+        run: python -m virtual_brain_pc.cli automation-protocol-run --tick-id 0
+
+      - name: Verify ops-run (all 12 lanes)
         run: python -m virtual_brain_pc.cli ops-run --tick-id 0
 
       - name: Run platform build script (bash)

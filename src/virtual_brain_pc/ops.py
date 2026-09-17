@@ -17,6 +17,20 @@ from .zero_classifier import (
     CALL_ZERO_CLASSIFY,
     CALL_ZERO_RELATION_RESOLVE,
 )
+from .naming_protocol import (
+    FUNCTION_NAMING_PROTOCOL_EXECUTE_SYSTEM_WIDE_IDENTIFIER_SWEEP_AND_EMIT_PROOF_RECORD,
+)
+from .iterative_resolution_engine import (
+    FUNCTION_ITERATIVE_RESOLUTION_ENGINE_EXECUTE_BUILT_IN_SELF_TEST_WITH_CONTROLLED_SCENARIO,
+)
+from .agent_directive_dispatcher import (
+    FUNCTION_AGENT_DIRECTIVE_DISPATCHER_BUILD_STANDARD_DIRECTIVE_ASSIGNMENTS_FOR_ALL_SEVEN_AGENTS,
+    FUNCTION_AGENT_DIRECTIVE_DISPATCHER_EXECUTE_ALL_AGENT_DIRECTIVES_IN_SEQUENCE,
+)
+from .automation_protocol import (
+    FUNCTION_AUTOMATION_PROTOCOL_EXECUTE_COMPLETE_GOVERNANCE_CYCLE,
+    FUNCTION_AUTOMATION_PROTOCOL_SERIALIZE_GOVERNANCE_CYCLE_RESULT_TO_DICT,
+)
 
 # ---------------------------------------------------------------------------
 # Internal Ops Runner  — executes every lane in sequence and produces a
@@ -160,6 +174,67 @@ def _run_registry_check() -> Dict[str, Any]:
     }
 
 
+def _run_naming_protocol_sweep() -> Dict[str, Any]:
+    result = FUNCTION_NAMING_PROTOCOL_EXECUTE_SYSTEM_WIDE_IDENTIFIER_SWEEP_AND_EMIT_PROOF_RECORD()
+    return {
+        "lane": "NAMING_PROTOCOL",
+        "sweep_state": result["state"],
+        "compliant_count": result["compliant_identifier_count"],
+        "non_compliant_count": result["non_compliant_identifier_count"],
+        "aggregate_proof_hash": result["aggregate_proof_hash"],
+        "ok": result["state"] == "STATE_COMPLETED",
+    }
+
+
+def _run_iterative_resolution_self_test() -> Dict[str, Any]:
+    result = (
+        FUNCTION_ITERATIVE_RESOLUTION_ENGINE_EXECUTE_BUILT_IN_SELF_TEST_WITH_CONTROLLED_SCENARIO()
+    )
+    return {
+        "lane": "ITERATIVE_RESOLUTION",
+        "test_passed": result["test_passed"],
+        "protocol_state": result["protocol_state"],
+        "total_steps_executed": result["total_steps_executed"],
+        "aggregate_proof_hash": result["aggregate_proof_hash"],
+        "ok": result["ok"],
+    }
+
+
+def _run_agent_directive_sweep() -> Dict[str, Any]:
+    assignments = (
+        FUNCTION_AGENT_DIRECTIVE_DISPATCHER_BUILD_STANDARD_DIRECTIVE_ASSIGNMENTS_FOR_ALL_SEVEN_AGENTS(
+            target_platform="linux"
+        )
+    )
+    dispatch_result = FUNCTION_AGENT_DIRECTIVE_DISPATCHER_EXECUTE_ALL_AGENT_DIRECTIVES_IN_SEQUENCE(
+        assignments
+    )
+    return {
+        "lane": "AGENT_DISPATCHER",
+        "total_dispatched": dispatch_result.total_directives_dispatched,
+        "total_completed": dispatch_result.total_directives_completed,
+        "failover_activations": dispatch_result.total_failover_activations,
+        "ok": dispatch_result.all_directives_completed,
+    }
+
+
+def _run_automation_protocol_cycle(tick_id: int) -> Dict[str, Any]:
+    cycle_result = FUNCTION_AUTOMATION_PROTOCOL_EXECUTE_COMPLETE_GOVERNANCE_CYCLE(
+        tick_id=tick_id,
+        target_platform="linux",
+    )
+    serialised = FUNCTION_AUTOMATION_PROTOCOL_SERIALIZE_GOVERNANCE_CYCLE_RESULT_TO_DICT(
+        cycle_result
+    )
+    return {
+        "lane": "AUTOMATION_PROTOCOL",
+        "cycle_state": serialised["cycle_state"],
+        "cycle_all_subsystems_passed": serialised["cycle_all_subsystems_passed"],
+        "aggregate_cycle_proof_hash": serialised["aggregate_cycle_proof_hash"],
+        "ok": serialised["ok"],
+    }
+
+
 def run_internal_ops(tick_id: int = 0) -> Dict[str, Any]:
     """Execute every internal operational lane in sequence.
 
@@ -176,6 +251,10 @@ def run_internal_ops(tick_id: int = 0) -> Dict[str, Any]:
     lanes["zero_classifier"] = _run_zero_classifier_lane()
     lanes["build_matrix"] = _run_build_matrix_lane()
     lanes["registry_check"] = _run_registry_check()
+    lanes["naming_protocol"] = _run_naming_protocol_sweep()
+    lanes["iterative_resolution"] = _run_iterative_resolution_self_test()
+    lanes["agent_dispatcher"] = _run_agent_directive_sweep()
+    lanes["automation_protocol"] = _run_automation_protocol_cycle(tick_id)
 
     passed = [k for k, v in lanes.items() if v.get("ok")]
     failed = [k for k, v in lanes.items() if not v.get("ok")]
