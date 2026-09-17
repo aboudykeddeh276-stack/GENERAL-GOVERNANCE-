@@ -13,6 +13,9 @@ dependencies = [
     "rich>=13.0",
 ]
 
+[project.optional-dependencies]
+test = ["pytest"]
+
 [project.scripts]
 vbpc = "virtual_brain_pc.cli:main"
 
