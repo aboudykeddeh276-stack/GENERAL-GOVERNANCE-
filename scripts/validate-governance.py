@@ -29,6 +29,8 @@ REQUIRED_FILES = [
     "docs/governance/agentic-intelligence-cli.md",
     "docs/governance/strict-deep-analysis-comment.md",
     "scripts/validate-governance.py",
+    "SPEC/kex-canonical.md",
+    "SPEC/conformance-checklist.md",
 ]
 
 MANIFEST_PATH = "docs/governance/manifest.json"
