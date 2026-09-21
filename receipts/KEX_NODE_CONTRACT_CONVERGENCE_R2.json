@@ -1,0 +1,61 @@
+{
+  "receipt_id": "KEX_NODE_CONTRACT_CONVERGENCE_R2",
+  "date": "2026-09-21",
+  "seed_id": "KEX-NODE-SIP-02-E31D2783AA9B404DAFB4DBD39EDCCEC6",
+  "library_artifact": {
+    "path": "/KEX Node Identity Instantiation/KEX_NODE_IDENTITY_INSTANTIATION_SKILLSET_v2.zip",
+    "sha256": "f86b80c2a567f0549de8eda43d67ed9b12f0dc02e109d147fb5117e1d6c79856",
+    "source_core_sha256": "7af90846b6c0d1f8b3d87ce97f3b654e47249cd888c87b715da6e77370f497d4",
+    "source_tests": "4 passed in 0.06s"
+  },
+  "braink": {
+    "authority_repo": "aboudykeddeh276-stack/BRAINK",
+    "authority_file": "observer2_runtime/node_contract_authority_v2.json",
+    "authority_hash": "dde17d407dc7effa1c9c32f1789fb4049e9206790bc692fc4aba329b0622b207",
+    "commits": [
+      "f8edfdc26b335f79af027852ac4c25c4cbb3b365",
+      "12cc9421eacd0099008f664f3275398b43a7706c",
+      "89397d4976566aaa4762e15e31aaf88cf487fb2d",
+      "01184971b3638f97757a541d074247c0f0c09592"
+    ],
+    "evolved_mechanics": [
+      "DUMB_SMART_AGENTIC_SYSTEM capability classes",
+      "definition revision",
+      "sector identity",
+      "lifecycle",
+      "target admission",
+      "capability envelope",
+      "evidence requirements",
+      "instance target profile",
+      "instance capability grant containment"
+    ]
+  },
+  "app": {
+    "repo": "aboudykeddeh276-stack/app",
+    "binding_file": "docs/kex-node-template-contract/kex_node_authority_binding.json",
+    "commits": [
+      "48793131fc8a2b2fd2395af9c75c6fdf7758f686",
+      "c68ae7e3b4d9cd65247f8a8022e281d711a30754",
+      "da53e93798d01e552eecd9c71e8f59ca8fb3a718",
+      "224680d0073afd4f9d70018f18e8a0e4fc29d052",
+      "f06c0aab368fd1fafc5bc715adc578cbfc449053",
+      "23714c5e56170d5d83daae79a9a9c3309e340b4a",
+      "07653ad854000da6ff3cb30f3af8a11b86e31658"
+    ],
+    "fail_closed_rules": [
+      "authority required",
+      "authority hash mismatch rejected",
+      "target profile must be admitted",
+      "capability grant cannot exceed definition envelope",
+      "mutation requires expected proof root"
+    ],
+    "ci_workflow": ".github/workflows/kex-node-template-contract.yml",
+    "ci_state": "PENDING_NO_RUN_OR_STATUS_OBSERVED"
+  },
+  "state": "CONTRACT_CONVERGED_STRUCTURALLY_EXECUTION_READBACK_PARTIAL",
+  "next_required_evidence": [
+    "observe BRAINK v2 regression execution",
+    "observe app GitHub Actions test run",
+    "only then promote current R2 validation to PASS"
+  ]
+}
