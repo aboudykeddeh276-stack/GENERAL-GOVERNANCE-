@@ -1,0 +1,35 @@
+{
+  "receipt_id": "KEX_AB_SYMBOLIC_ARCHITECTURE_R4",
+  "date": "2026-09-21",
+  "authority_chain": [
+    "BRAINK/observer2_runtime/ab_binary_codec.py",
+    "MINING/backend/kex/ab_binary_illm_bridge.py",
+    "MINING/backend/kex/ab_binary_translator_registration.py",
+    "app/docs/kex-node-template-contract/ab_binary_runtime.js",
+    "KEDDEH_SOFTWARE_NODES/event_runner/report03_r3/src/ab_symbolic_codec.mjs"
+  ],
+  "semantics": {
+    "A": "run of 1 states, count 1..9",
+    "B": "run of 0 states, count 1..9",
+    "IL-LLM": "semantic dictionary/grammar",
+    "KEX": "representation translation and substrate boundary selection",
+    "HTML": "virtual semantic projection, not physical compression format"
+  },
+  "evidence": {
+    "report": "KEDDEH_SOFTWARE_NODES/event_runner/report03_r3/REPORT_03_R4_AB_KEX_ILLM.md",
+    "execution_receipt": "KEDDEH_SOFTWARE_NODES/event_runner/report03_r3/evidence/REPORT03_R4_AB_EXECUTION_RECEIPT.json",
+    "observed_tests": {
+      "report03_ab": "8/8 PASS",
+      "app_js": "7/7 PASS",
+      "python_bridge": "10/10 PASS"
+    }
+  },
+  "falsification": [
+    "universal A/B compression rejected",
+    "ASCII A/B token compression rejected",
+    "lossy HEXxHEX fold reclassified as non-reversible fingerprint/fold",
+    "HTML projection distinguished from wire compression",
+    "host physical binary distinguished from virtual semantic alphabet"
+  ],
+  "state": "DEPLOYED_ACROSS_CANONICAL_TRANSLATION_AND_PROJECTION_SURFACES"
+}
