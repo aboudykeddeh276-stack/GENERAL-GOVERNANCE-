@@ -1,0 +1,29 @@
+{
+  "receipt_id": "KEX_REQUIREMENTS_CONVERGENCE_R1",
+  "date": "2026-09-22",
+  "recovered_requirements": "GENERAL-GOVERNANCE-/requirements/KEX_REQUIREMENTS_RECOVERY_R1.json",
+  "canonical_repository": "aboudykeddeh276-stack/quantum-computer-by-keddeh-systems",
+  "canonical_files": [
+    "docs/KEX_BRAINK_CANONICAL_TRANSFER_DOCUMENT_v1.md",
+    "src/kex-wrapper/index.ts",
+    "src/kex-wrapper/ab-lineage-style.ts",
+    "src/kex-wrapper/ab-lineage-style.test.ts",
+    "docs/evidence/KEX_SEED_DNA_AB_LINEAGE_R1.json"
+  ],
+  "braink_binding": "BRAINK/governance/KEX_SEED_DNA_REQUIREMENT_BINDING_R1.json",
+  "package_manifest_repair": "8e57fb4b0c9ea9bd77952304f6139f718ab2438d",
+  "execution": {
+    "direct_compilation_and_harness": "PASS_5_OF_5",
+    "github_actions_run": 35686091973,
+    "github_actions_result": "STARTUP_FAILURE_ZERO_USER_CODE_STEPS"
+  },
+  "architectural_state": [
+    "Seed is live State.",
+    "DNA is first-class identity.",
+    "Lineage is first-class state.",
+    "CompressionStyle is pluggable and author-native.",
+    "A/B is one dynamic below Seed/DNA/lineage.",
+    "BRAINK is bound as downstream runtime/projection consumer."
+  ],
+  "status": "CONVERGED_WITH_RUNNER_BOUNDARY_EXPLICIT"
+}
