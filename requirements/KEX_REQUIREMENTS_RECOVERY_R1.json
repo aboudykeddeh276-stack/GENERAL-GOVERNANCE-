@@ -1,0 +1,100 @@
+{
+  "artifact": "KEX_REQUIREMENTS_RECOVERY_R1",
+  "date": "2026-09-22",
+  "purpose": "Recover authoritative KEX/BRAINK requirements across the owner repository estate and separate requirement sources from placeholder/demo surfaces.",
+  "sources": [
+    {
+      "repo": "aboudykeddeh276-stack/quantum-computer-by-keddeh-systems",
+      "path": "docs/KEX_BRAINK_CANONICAL_TRANSFER_DOCUMENT_v1.md",
+      "class": "CANONICAL_TRANSFER",
+      "requirements": [
+        "KEX is a compression grammar for seed logic, authorship root, and rehydration rules.",
+        "Seed expansion must be deterministic and hash-checkable.",
+        "BRAINK is the runtime organism/state/memory/feedback model.",
+        "Workbook runtime is an executable grid/proof surface.",
+        "Binary artifacts are optional render artifacts; reviewable schema plus deterministic verification remains the proof surface.",
+        "Active states exclude zero-weight execution.",
+        "HEX x HEX = KEX is a symbolic compression/seed-expansion grammar, not a hardware claim."
+      ]
+    },
+    {
+      "repo": "aboudykeddeh276-stack/quantum-computer-by-keddeh-systems",
+      "path": "src/kex-wrapper/index.ts",
+      "class": "EXECUTABLE_WRAPPER_REQUIREMENTS",
+      "requirements": [
+        "ACTIVE_STATE_SEQUENCE is [-3,-2,1,2,3].",
+        "Seed already is live State; bootSeed must not reintroduce a hydrate phase.",
+        "Seed contains subscriptionGenesis, activeState, scripted memory, lineage, outbound surface, and compressionStyle.",
+        "Compression is author-native and lineage-aware via compressLineage/expandLineage.",
+        "KEX packet frame is HEX_LINEAGE_ONLY and payloadReadable=false.",
+        "Balanced zero-sum projection retains both operands instead of promoting zero to an active state.",
+        "Foreign/absent compression style must yield structural non-comprehension rather than fabricated decoding."
+      ]
+    },
+    {
+      "repo": "aboudykeddeh276-stack/quantum-computer-by-keddeh-systems",
+      "path": "docs/KEX_COMPLETE_CONSTRAINTS.md",
+      "class": "CONSTRAINT_AUTHORITY",
+      "requirements": [
+        "Processing chain is LANGUAGE -> MEANING -> FUNCTION -> CONSTRAINT -> ACTION -> PROOF -> STATUS.",
+        "Proof/status lanes are explicit and unsupported claims remain pending/model-local/external-unvalidated.",
+        "State/Transition/Definition calculus and OF operators are active KEX methods.",
+        "Scientific/hardware claims require actual measurement before promotion."
+      ]
+    },
+    {
+      "repo": "aboudykeddeh276-stack/quantum-computer-by-keddeh-systems",
+      "path": "docs/KEX_FIGMA_PIPELINE_HANDOFF_PLAN.md",
+      "class": "WORKBOOK_AND_MATRIX_INPUT_REQUIREMENTS",
+      "requirements": [
+        "KEX sovereign seed workbook is an explicit input lane.",
+        "Root Matrix is an explicit input lane and must be parsed/mapped, not substituted by fabricated placeholder matrices.",
+        "Workbook runtime and Root Matrix evidence must remain attached to source artifacts."
+      ]
+    },
+    {
+      "repo": "aboudykeddeh276-stack/app",
+      "path": "backend/kex_core.py",
+      "class": "DNA_AND_IDENTITY_IMPLEMENTATION",
+      "requirements": [
+        "DNA_SIGNATURE is a runtime identity input.",
+        "KEX IDs bind worded names to DNA_SIGNATURE.",
+        "Capability keys encode a DNA crossing value.",
+        "Event hashes include DNA_SIGNATURE.",
+        "The existing execute_hex_compress is a bounded fold and must not be confused with a reversible lineage codec."
+      ]
+    },
+    {
+      "repo": "aboudykeddeh276-stack/MINING",
+      "path": "docs/STATE_SEED_ARCHITECTURE.md",
+      "class": "STATE_SEED_CHECKPOINT_ARCHITECTURE",
+      "requirements": [
+        "State seeds are composable JSON checkpoints carrying configuration, tests, integration state, and proof hashes.",
+        "A downstream workflow should be able to continue from a verified seed without reconstructing prerequisite context.",
+        "Seed lineage/checkpoints are portable and traceable."
+      ]
+    }
+  ],
+  "recovered_architecture": [
+    "KEX Seed is an originating executable/checkpoint state, not merely a label.",
+    "KEX DNA is identity/lineage material and is not created by A/B.",
+    "A/B is one dynamic/representation/operator family inside KEX, not the whole KEX identity model.",
+    "CompressionStyle is pluggable and author-native; a foreign style can be uncomprehended rather than coerced.",
+    "Lineage is a first-class payload; KEX can carry compressed lineage without exposing addressed payload.",
+    "Workbook/Root Matrix/seed artifacts are requirement-bearing sources, not optional narrative decoration.",
+    "Binary representation is not automatically the semantic source of truth; render/binary artifacts may be downstream projections.",
+    "Zero is not promoted into the active-state sequence; balanced relationships preserve operands."
+  ],
+  "do_not_treat_as_requirement": [
+    "Static placeholder capacities or online states from demo API datasets.",
+    "Randomized substrate-grid values.",
+    "Generated example ROOT_MATRIX arrays in placeholder API surfaces when a Root Matrix source artifact exists elsewhere.",
+    "Any newer wrapper or report that contradicts the canonical transfer/wrapper rules without explicit supersession evidence."
+  ],
+  "correction_to_recent_work": [
+    "Recent A/B work was over-scoped by treating A/B primarily as binary-run compression.",
+    "Recent positional work was over-scoped by making A/B carry identity/authority that belongs to Seed/DNA/lineage.",
+    "The correct next implementation must start from Seed + DNA + lineage + author-native CompressionStyle, then attach A/B as one dynamic."
+  ],
+  "status": "RECOVERED_FROM_LIVE_REPOSITORY_ESTATE"
+}
